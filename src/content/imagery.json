@@ -120,12 +120,17 @@
     "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian woman in her mid forties standing against a plain painted wall in an ordinary room, lit softly from one side by a single window. She looks directly into the lens, calm and unsmiling, shoulders square. Unretouched skin, visible pores and fine lines, hair loose, no makeup. Plain top. Nothing else in frame. Deep true blacks, clean off-white highlights, medium contrast, fine film grain. Severe, plain, real. No text, no logos, no props, no medical equipment, no lab coat, no clinic."
   },
   "programme-recovery": {
-    "alt": "A man sitting on the edge of a bed in an ordinary bedroom, taping his knee.",
+    "alt": "A man standing at a bedroom window early in the morning after training, looking out.",
     "treatment": "colour",
     "aspect": "4:3",
-    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_112800_c624e6a0-2905-4032-a7fc-2d8f1a475257.png",
-    "job": "c624e6a0-2905-4032-a7fc-2d8f1a475257",
-    "prompt": "Editorial documentary photograph, 35mm film, Kodak Portra, muted low-saturation colour. An Australian man in his late thirties sits on the edge of an unmade bed in an ordinary suburban bedroom, early morning, taping his own knee. Photographed from a low neutral angle, he is looking down at his hands, absorbed, not performing. Unretouched skin, visible body hair and scars, no gym styling. Warm neutral palette of off-white walls, cream linen and charcoal shadow. Soft directional window light, gentle contrast, fine film grain, shallow depth of field. Plain, quiet, undramatic. No text, no logos, no branded clothing, no medical equipment, no vials, no syringes, no pills, no lab coat, no clinic."
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_115934_fbc881df-cb3f-4c1c-84b3-08bfa64f0033.png",
+    "job": "fbc881df-cb3f-4c1c-84b3-08bfa64f0033",
+    "prompt": "Editorial documentary photograph, 35mm film, Kodak Portra 400, muted low-saturation colour. An Australian man in his late thirties standing at a bedroom window in an ordinary suburban house early in the morning after training, one hand resting on the window frame, looking out, absorbed and unposed. Seen from the side. Correct human anatomy: exactly two arms and two hands, one hand on the frame, the other at his side. Unretouched skin, plain unbranded t-shirt, hair damp. Warm neutral palette of off-white walls, cream curtain and charcoal shadow. Soft window light, gentle contrast, fine film grain, shallow depth of field. Plain, quiet, undramatic. No tape, no strapping, no bandage, no brace, no injury, no text, no logos, no branded clothing, no medical equipment, no pills, no clinic.",
+    "note": "Reshot. The first frame put the subject's hands on his own knee to tape it: the model grew a third arm, and strapping a leg reads as first aid rather than recovery between sessions. This composition keeps the hands apart and away from the legs.",
+    "alternates": [
+      "bdfd7dce-b941-4186-a0fd-a4e296d23d42",
+      "d5b035ab-0b62-4c2e-90ca-5849573a015c"
+    ]
   },
   "programme-performance": {
     "alt": "A man resting on a bench between sets in an ordinary suburban gym.",

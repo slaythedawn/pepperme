@@ -108,7 +108,18 @@ rewrites the manifest to local paths, and is idempotent. Then drop the
 host.
 
 To reshoot one frame: take its `prompt` from the manifest, adjust the subject
-line only, regenerate, and swap the `src` and `job`.
+line only, regenerate, and swap the `src` and `job`. Add a `note` saying why,
+and keep any other takes in `alternates`.
+
+Two guards, learned from the first pass and now carried by `IMAGE_RECIPE.guards`:
+
+- **Anatomy.** A subject whose hands work on their own body — taping a knee,
+  holding a joint — is where the model grows an extra limb. State the limb count
+  in the prompt and prefer compositions that keep the hands apart and away from
+  the legs.
+- **Story.** Strapping, bandaging or treating an injury reads as first aid, not
+  as recovery between training sessions, and it is not what Pepper Me does. No
+  frame shows an injury being treated.
 
 ## Reference range bar
 

@@ -30,6 +30,10 @@ export type ImageSlot = {
   /** Higgsfield job id, for tracing a frame back to its generation. */
   job: string;
   prompt: string;
+  /** Why this frame was reshot, when it was. */
+  note?: string;
+  /** Job ids of other takes from the same reshoot, if one reads better. */
+  alternates?: string[];
 };
 
 /**
@@ -54,6 +58,19 @@ export const IMAGE_RECIPE = {
   },
   exclusions:
     "No text, no logos, no branded clothing, no props, no medical equipment, no vials, no syringes, no pills, no lab coat, no stethoscope, no clinic, no pharmacy, no stock-photo expression, no posing.",
+  /**
+   * Two guards learned the hard way, and carried by every prompt from here on.
+   *
+   * Anatomy: a subject whose hands work on their own body — taping a knee,
+   * touching a joint — is where the model grows an extra limb. State the limb
+   * count, and prefer compositions that keep the hands apart and away from the
+   * legs.
+   *
+   * Story: strapping, bandaging or treating an injury is first aid, not
+   * recovery between training sessions, and it isn't what Pepper Me does.
+   */
+  guards:
+    "Correct human anatomy, exactly two arms and two hands. No tape, no strapping, no bandage, no brace, no injury, no first aid.",
 } as const;
 
 const SLOTS = manifest as Record<string, Omit<ImageSlot, "id">>;
