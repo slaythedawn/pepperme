@@ -203,5 +203,61 @@
     "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113443_bf47f5bd-6292-4883-82e6-df695bdb4b86.png",
     "job": "bf47f5bd-6292-4883-82e6-df695bdb4b86",
     "prompt": "Editorial documentary photograph, 35mm film, Kodak Portra 400, muted low-saturation colour. An Australian adult in their fifties walking a suburban street mid-morning, seen from across the road at a distance, small in the frame against brick fences and a wide pale sky. Ordinary clothes, unaware of the camera. Warm neutral palette, off-white sky, cream brick, charcoal shadow. Flat soft daylight, gentle contrast, fine film grain. Plain and undramatic. No text, no logos, no medical equipment, no clinic."
+  },
+  "recovery-hero": {
+    "alt": "A woman in her forties sitting on the edge of a bath after a run, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_134259_d6bf4026-0552-4b0d-88cc-0ee7b482c0aa.png",
+    "job": "d6bf4026-0552-4b0d-88cc-0ee7b482c0aa",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian woman in her early forties sitting on the edge of a bath in an ordinary bathroom after a run, a towel over one shoulder, one hand resting on the rim beside her. She looks directly into the lens, calm and unsmiling. Correct human anatomy: exactly two arms and two hands. Unretouched skin, visible pores and fine lines, hair damp, no makeup. Plain running singlet. Bare tiled wall behind her. Soft daylight from one window, medium contrast, true blacks, fine film grain. Quiet and plain. No tape, no strapping, no bandage, no brace, no injury, no text, no logos, no props, no medical equipment, no lab coat, no clinic."
+  },
+  "performance-hero": {
+    "alt": "A man in his forties standing in a garage set up for training, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_134259_28ab7cbe-aa7d-426f-8297-1b1cf07ad1e4.png",
+    "job": "28ab7cbe-aa7d-426f-8297-1b1cf07ad1e4",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian man in his early forties standing in an ordinary suburban garage set up for training, arms hanging at his sides, chalk dust on his hands. He looks directly into the lens, calm and unsmiling. Correct human anatomy: exactly two arms and two hands, both at his sides. Unretouched skin, visible stubble and lines. Plain unbranded t-shirt. Bare brick wall and a roller door behind him. Soft daylight from the open door, medium contrast, true blacks, fine film grain. Plain and real. No tape, no strapping, no bandage, no brace, no injury, no text, no logos, no branded clothing, no medical equipment, no supplements, no clinic."
+  },
+  "sleep-hero": {
+    "alt": "A woman in her fifties sitting on the edge of a bed late at night, one lamp lit, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_134259_0793cb1c-6813-4e52-ac02-4c034c65e0f7.png",
+    "job": "0793cb1c-6813-4e52-ac02-4c034c65e0f7",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian woman in her early fifties sitting on the edge of a made bed in an ordinary bedroom late at night, a single lamp lit beside her, hands resting in her lap. She looks directly into the lens, calm and unsmiling, awake. Correct human anatomy: exactly two arms and two hands resting in her lap. Unretouched skin, visible lines, hair loose, no makeup. Plain sleep t-shirt. Bare wall behind her. Warm lamplight from one side, deep shadow, medium contrast, true blacks, fine film grain. Still and plain. No text, no logos, no props, no medical equipment, no pills, no clinic."
+  },
+  "longevity-hero": {
+    "alt": "A man in his fifties standing in a suburban back garden in the morning, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_134259_2433a986-8cc5-4854-865d-c42c1854ff03.png",
+    "job": "2433a986-8cc5-4854-865d-c42c1854ff03",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian man in his late fifties standing in an ordinary suburban back garden in the morning, arms at his sides. He looks directly into the lens, calm and unsmiling. Correct human anatomy: exactly two arms and two hands, both at his sides. Unretouched skin, deep lines, grey hair, weathered. Plain work shirt. Fence, a lemon tree and a clothesline behind him. Flat soft daylight, medium contrast, true blacks, fine film grain. Plain and real. No text, no logos, no props, no medical equipment, no clinic."
+  },
+  "sexual-hero": {
+    "alt": "A couple in their forties sitting at a kitchen table, both looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_134259_0f3dfee7-a7a3-414c-8c75-e2382eb12196.png",
+    "job": "0f3dfee7-a7a3-414c-8c75-e2382eb12196",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian couple in their forties sitting side by side at a plain kitchen table in an ordinary house, both fully clothed, both looking directly into the lens, calm and unsmiling, hands resting on the table. Correct human anatomy: two people, each with exactly two arms and two hands, all four hands visible on the table. Unretouched skin, no makeup, plain clothes. Bare wall and one window behind them. Soft daylight, medium contrast, true blacks, fine film grain. Quiet, plain, not sensual, not staged. No text, no logos, no props, no medical equipment, no pills, no clinic."
+  },
+  "sexual-him-hero": {
+    "alt": "A man in his fifties standing against a plain wall in side light, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_134259_a386ae43-e069-4b96-aa18-d559fcfb8a59.png",
+    "job": "a386ae43-e069-4b96-aa18-d559fcfb8a59",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian man in his early fifties standing against a plain painted wall in an ordinary room, lit hard from one side by a single window, arms at his sides. He looks directly into the lens, calm and unsmiling, shoulders square. Correct human anatomy: exactly two arms and two hands. Unretouched skin, visible pores, grey stubble and lines. Plain dark shirt. Nothing else in frame. Deep true blacks, clean off-white highlights, medium contrast, fine film grain. Severe, plain, real. No text, no logos, no props, no medical equipment, no lab coat, no clinic."
+  },
+  "sexual-her-hero": {
+    "alt": "A woman in her forties standing against a plain wall in side light, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_134259_26cca44b-e332-469a-b541-0b7247427678.png",
+    "job": "26cca44b-e332-469a-b541-0b7247427678",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian woman in her late forties standing against a plain painted wall in an ordinary room, lit softly from one side by a single window, arms at her sides. She looks directly into the lens, calm and unsmiling, shoulders square. Correct human anatomy: exactly two arms and two hands. Unretouched skin, visible pores and fine lines, hair loose, no makeup. Plain dark top. Nothing else in frame. Deep true blacks, clean off-white highlights, medium contrast, fine film grain. Severe, plain, real. No text, no logos, no props, no medical equipment, no lab coat, no clinic."
   }
 }

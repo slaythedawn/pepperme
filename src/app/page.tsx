@@ -14,8 +14,8 @@ import { ReferenceRangeSet } from "@/components/ui/ReferenceRangeBar";
 import { StatRail } from "@/components/ui/StatRail";
 import { LineChart } from "@/components/charts/LineChart";
 import { SAMPLE_PANEL } from "@/content/biomarkers";
-import { DOCTORS } from "@/content/doctors";
-import { JOURNAL } from "@/content/journal";
+import { DOCTORS, doctorBySlug } from "@/content/doctors";
+import { ARTICLES } from "@/content/articles";
 import { PRICING, PROTOCOLS, TREATMENT_AREAS } from "@/content/protocols";
 import { PRESS } from "@/content/site";
 
@@ -487,22 +487,32 @@ export default function HomePage() {
               Read the medicine<span className="mark">.</span>
             </h2>
           </div>
+          <Link
+            href="/journal"
+            className="t-ui text-text-primary underline decoration-border-inactive decoration-1 underline-offset-4 hover:decoration-border-strong"
+          >
+            All issues →
+          </Link>
         </div>
         <ul className="mt-[var(--space-6)] grid list-none gap-[var(--space-6)] p-0 md:grid-cols-3">
-          {JOURNAL.map((j) => (
+          {ARTICLES.map((j) => (
             <li key={j.issue}>
-              <SiteImage id={j.image} ratio="4 / 5" code={j.issue} sizes="(max-width: 768px) 100vw, 400px" />
-              <p className="mt-[var(--space-3)] mb-0">
-                <MonoData className="text-text-secondary">
-                  {j.issue} · {j.category}
-                </MonoData>
-              </p>
-              <h3 className="t-h4 mt-[var(--space-2)] text-text-primary">{j.title}</h3>
-              <p className="mt-[var(--space-2)] mb-0">
-                <MonoData className="text-text-secondary">
-                  {j.readTime} · {j.author}
-                </MonoData>
-              </p>
+              <Link href={`/journal/${j.slug}`} className="group block no-underline">
+                <SiteImage id={j.image} ratio="4 / 5" code={j.issue} sizes="(max-width: 768px) 100vw, 400px" />
+                <p className="mt-[var(--space-3)] mb-0">
+                  <MonoData className="text-text-secondary">
+                    {j.issue} · {j.category}
+                  </MonoData>
+                </p>
+                <h3 className="t-h4 mt-[var(--space-2)] text-text-primary group-hover:underline decoration-border-inactive decoration-1 underline-offset-4">
+                  {j.title}
+                </h3>
+                <p className="mt-[var(--space-2)] mb-0">
+                  <MonoData className="text-text-secondary">
+                    {j.readTime} · reviewed by {doctorBySlug(j.reviewer).name}
+                  </MonoData>
+                </p>
+              </Link>
             </li>
           ))}
         </ul>

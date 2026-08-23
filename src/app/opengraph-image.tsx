@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 import { SITE } from "@/content/site";
 
@@ -10,11 +12,15 @@ export const contentType = "image/png";
  * regulatory line in the mono layer — the same three elements the header
  * carries.
  *
- * It renders in a system sans rather than Funnel Display: embedding the real
- * face means shipping the font binary to the edge runtime. Worth doing before
- * launch; not worth blocking a share card on. See LAUNCH.md.
+ * The wordmark is set in Funnel Display, read off disk at build time — the
+ * share card is the one place the brand face has to be embedded rather than
+ * linked, because a social crawler renders the PNG and never loads a stylesheet.
  */
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  const display = await readFile(
+    path.join(process.cwd(), "src/app/_fonts/FunnelDisplay-Medium.ttf"),
+  );
+
   return new ImageResponse(
     (
       <div
@@ -27,7 +33,7 @@ export default function OpengraphImage() {
           background: "#0A0A0B",
           color: "#FDFDFC",
           padding: "72px 80px",
-          fontFamily: "sans-serif",
+          fontFamily: "Funnel Display, sans-serif",
         }}
       >
         <div
@@ -67,6 +73,11 @@ export default function OpengraphImage() {
         </div>
       </div>
     ),
-    size,
+    {
+      ...size,
+      fonts: [
+        { name: "Funnel Display", data: display, style: "normal", weight: 500 },
+      ],
+    },
   );
 }

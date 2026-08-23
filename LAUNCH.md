@@ -66,19 +66,14 @@ wire up a preview deployment.
 
 ## Next, not blocking
 
-- **The remaining protocol trios.** Only hormonal is built. Recovery,
-  performance, sleep, sexual health and longevity route to `/assessment` from
-  their cards. Per the handoff, only hormonal and sexual health should fork
-  Him/Her — the rest stay unisex, so they are one page each, not three.
-- **Journal and article templates**, including the article meta block
-  (`WRITTEN BY` / `MEDICALLY REVIEWED BY` / `PUBLISHED` / `LAST REVIEWED`). The
-  handoff calls this non-optional for anything that publishes; the three journal
-  cards on the homepage currently link nowhere.
-- **The OG card should use Funnel Display.** It renders in a system sans today
-  because embedding the real face means shipping the font binary to the edge
-  runtime.
+- **More journal.** Three articles are written. The format carries itself now —
+  `src/content/articles.ts` plus a reviewer is a new article — but three is a
+  thin journal, and it is the strongest organic surface the site has.
 - **Analytics and consent.** Nothing is tracking. Whatever goes in needs to be
   in the privacy policy before it goes in.
+- **Individual doctor profiles.** The article meta block links a reviewer to
+  their card on `/doctors` via an anchor. Real `/doctors/[slug]` pages would be
+  a better landing surface for a reviewer credential.
 - **Accessibility audit on real hardware.** The structural floor is in — one
   `h1` per page, skip link, focus ring on every interactive element, semantic
   headings, `prefers-reduced-motion`, alt text on every frame, 44px targets. It
@@ -89,7 +84,8 @@ wire up a preview deployment.
 ## Verified in this build
 
 - `npm run build` clean, `npx tsc --noEmit` clean, `npx eslint .` clean.
-- All 11 routes return 200, unknown paths return the branded 404.
+- All 24 routes return 200, unknown paths return the branded 404. Crawled from
+  the sitemap following every internal link: no broken links.
 - `sitemap.xml` and `robots.txt` generate from `src/content/routes.ts`.
 - No internal link points at a page that doesn't exist.
 - No stale `$99` or `$180/month` anywhere in the source.

@@ -10,7 +10,7 @@ import type { Doctor } from "@/content/doctors";
  */
 export function DoctorCard({ doctor }: { doctor: Doctor }) {
   return (
-    <Card interactive className="flex flex-col">
+    <Card interactive className="flex flex-col scroll-mt-[calc(var(--header-height)+var(--space-4))]" id={doctor.slug}>
       <SiteImage
         id={doctor.portrait}
         ratio="4 / 5"

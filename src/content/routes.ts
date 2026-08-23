@@ -17,12 +17,28 @@ export const ROUTES: Route[] = [
   { path: "/protocols/hormonal", priority: 0.9, changeFrequency: "monthly" },
   { path: "/protocols/hormonal/him", priority: 0.9, changeFrequency: "monthly" },
   { path: "/protocols/hormonal/her", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/protocols/recovery", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/protocols/performance", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/protocols/sleep", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/protocols/longevity", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/protocols/sexual-health", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/protocols/sexual-health/him", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/protocols/sexual-health/her", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/journal", priority: 0.7, changeFrequency: "weekly" },
   { path: "/doctors", priority: 0.8, changeFrequency: "monthly" },
   { path: "/science", priority: 0.7, changeFrequency: "weekly" },
   { path: "/pricing", priority: 0.8, changeFrequency: "monthly" },
   { path: "/assessment", priority: 0.9, changeFrequency: "monthly" },
   { path: "/prescribing-standard", priority: 0.5, changeFrequency: "yearly" },
 ];
+
+/** Article routes, generated from the journal so a new article is indexed. */
+export const articleRoutes = (slugs: string[]): Route[] =>
+  slugs.map((slug) => ({
+    path: `/journal/${slug}`,
+    priority: 0.6,
+    changeFrequency: "yearly" as const,
+  }));
 
 /**
  * The canonical origin. Set NEXT_PUBLIC_SITE_URL in the deployment environment;

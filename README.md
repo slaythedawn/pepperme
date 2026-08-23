@@ -17,17 +17,26 @@ and what has been verified.
 
 ## Routes
 
-| Route | Handoff file |
+| Route | Source |
 |---|---|
 | `/` | `index.html` |
 | `/protocols` | `protocols.html` |
-| `/protocols/hormonal` | `protocol-hormonal.html` |
-| `/protocols/hormonal/him` | `protocol-hormonal-him.html` |
-| `/protocols/hormonal/her` | `protocol-hormonal-her.html` |
+| `/protocols/hormonal` + `/him` + `/her` | `protocol-hormonal*.html` |
+| `/protocols/sexual-health` + `/him` + `/her` | the trio pattern, rolled out |
+| `/protocols/recovery` · `/performance` · `/sleep` · `/longevity` | the trio pattern, unisex |
 | `/doctors` | `doctors.html` |
 | `/science` | `science.html` |
 | `/pricing` | `pricing.html` |
 | `/assessment` | `assessment.html` |
+| `/journal` + `/journal/[slug]` | the journal, with the article meta block |
+| `/prescribing-standard`, `/legal` | new — see Routing, SEO and legal |
+
+Per the handoff, only hormonal and sexual health fork Him/Her, because only
+those physiologies genuinely diverge. Recovery, performance, sleep and longevity
+are one unisex page each — a fork block where the content doesn't fork is
+decoration. The five unisex programs share `ProgramPage`; the four gendered
+variants share `GenderedProgramPage`; all of the copy lives in
+`src/content/programs.ts`.
 
 The prototypes were treated as design references, not as code — nothing in them
 was copied across. The design intent, tokens and copy were rebuilt as
@@ -124,6 +133,22 @@ Two guards, learned from the first pass and now carried by `IMAGE_RECIPE.guards`
 - **Story.** Strapping, bandaging or treating an injury reads as first aid, not
   as recovery between training sessions, and it is not what Pepper Me does. No
   frame shows an injury being treated.
+
+## The journal
+
+`/journal/[slug]` renders from `src/content/articles.ts`, where the body is
+structured blocks rather than prose strings — so a reference range set inside an
+article is the same component the program pages use, not a screenshot.
+
+Every article carries `ArticleMeta` directly under the standfirst: written by,
+**medically reviewed by** (linked to the reviewer's card on `/doctors`),
+published, last reviewed. Per the handoff this block is not optional and nothing
+publishes without it. Articles also emit `Article` structured data with
+`reviewedBy` set to the named doctor.
+
+Articles carry the strictest reading of the compliance rules: no medicine named,
+no outcome promised, no before-and-after, cohort results always stated with
+their method and their limits.
 
 ## Reference range bar
 

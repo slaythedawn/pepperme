@@ -30,18 +30,19 @@ export const NAV_LINKS = [
   { label: "Doctors", href: "/doctors" },
   { label: "Science", href: "/science" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Journal", href: "/journal" },
 ] as const;
 
 export const FOOTER_COLUMNS = [
   {
     heading: "Care areas",
     links: [
-      { label: "Recovery", href: "/protocols" },
-      { label: "Performance", href: "/protocols" },
-      { label: "Sleep", href: "/protocols" },
+      { label: "Recovery", href: "/protocols/recovery" },
+      { label: "Performance", href: "/protocols/performance" },
+      { label: "Sleep", href: "/protocols/sleep" },
       { label: "Hormonal", href: "/protocols/hormonal" },
-      { label: "Longevity", href: "/protocols" },
-      { label: "Sexual health", href: "/protocols" },
+      { label: "Longevity", href: "/protocols/longevity" },
+      { label: "Sexual health", href: "/protocols/sexual-health" },
     ],
   },
   {
@@ -49,7 +50,7 @@ export const FOOTER_COLUMNS = [
     links: [
       { label: "Doctors", href: "/doctors" },
       { label: "Science", href: "/science" },
-      { label: "Pricing", href: "/pricing" },
+      { label: "Journal", href: "/journal" },
       { label: "Assessment", href: "/assessment" },
     ],
   },
