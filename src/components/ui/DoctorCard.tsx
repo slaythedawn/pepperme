@@ -1,4 +1,4 @@
-import { Placeholder } from "./Placeholder";
+import { SiteImage } from "./SiteImage";
 import { MonoTag, MonoData } from "./MonoTag";
 import { Card } from "./Card";
 import type { Doctor } from "@/content/doctors";
@@ -11,10 +11,11 @@ import type { Doctor } from "@/content/doctors";
 export function DoctorCard({ doctor }: { doctor: Doctor }) {
   return (
     <Card interactive className="flex flex-col">
-      <Placeholder
+      <SiteImage
+        id={doctor.portrait}
         ratio="4 / 5"
-        brief={doctor.portraitAlt}
         code={doctor.ahpra}
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
       />
       <div className="flex flex-1 flex-col gap-[var(--space-2)] p-[var(--card-padding)]">
         <MonoTag>

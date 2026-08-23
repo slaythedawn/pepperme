@@ -14,12 +14,14 @@ export type Doctor = {
   reads: string;
   bio: string;
   quote?: string;
-  portraitAlt: string;
+  /** Image slot id in imagery.json. */
+  portrait: string;
 };
 
 export const DOCTORS: Doctor[] = [
   {
     slug: "a-reid",
+    portrait: "doctor-a-reid",
     name: "Dr. A. Reid",
     discipline: "Endocrinology",
     city: "MEL",
@@ -29,10 +31,10 @@ export const DOCTORS: Doctor[] = [
     bio: "Endocrinologist, Melbourne. 11 years clinical practice across Royal Melbourne and Cabrini. Reid leads Pepper Me's prescribing standard and reviews every protocol-launch cohort.",
     quote:
       "Most telehealth wants doctors to be a script printer. Pepper Me wants us to be doctors. That's why I joined.",
-    portraitAlt: "Portrait of Dr. A. Reid, endocrinologist, Melbourne.",
   },
   {
     slug: "m-holt",
+    portrait: "doctor-m-holt",
     name: "Dr. M. Holt",
     discipline: "Sports medicine",
     city: "SYD",
@@ -42,10 +44,10 @@ export const DOCTORS: Doctor[] = [
     bio: "Sports physician, 9 years Olympic Park clinic. Reads male endocrine, recovery and performance panels together.",
     quote:
       "For men, this is usually about reading the whole system. The single-number result is rarely the answer.",
-    portraitAlt: "Portrait of Dr. M. Holt, sports physician, Sydney.",
   },
   {
     slug: "r-bennett",
+    portrait: "doctor-r-bennett",
     name: "Dr. R. Bennett",
     discipline: "Women's health · GP",
     city: "ADL",
@@ -55,10 +57,10 @@ export const DOCTORS: Doctor[] = [
     bio: "Women's-health GP, 12 years. Cycle, perimenopause, post-menopause. Co-leads the women's hormonal program.",
     quote:
       "Women's bodies aren't an edge case. The system has a shape. You just need someone willing to read it.",
-    portraitAlt: "Portrait of Dr. R. Bennett, women's health GP, Adelaide.",
   },
   {
     slug: "k-wong",
+    portrait: "doctor-k-wong",
     name: "Dr. K. Wong",
     discipline: "Sleep medicine",
     city: "BNE",
@@ -66,10 +68,10 @@ export const DOCTORS: Doctor[] = [
     years: 12,
     reads: "SLP",
     bio: "Sleep physician. Royal Brisbane sleep clinic, 12 years. Leads the sleep program.",
-    portraitAlt: "Portrait of Dr. K. Wong, sleep physician, Brisbane.",
   },
   {
     slug: "l-mackenzie",
+    portrait: "doctor-l-mackenzie",
     name: "Dr. L. Mackenzie",
     discipline: "Psychiatry",
     city: "PER",
@@ -77,10 +79,10 @@ export const DOCTORS: Doctor[] = [
     years: 10,
     reads: "HRM-W · SLP",
     bio: "Psychiatrist. Mood, sleep, perimenopausal cognition. Co-reads the women's hormonal panel.",
-    portraitAlt: "Portrait of Dr. L. Mackenzie, psychiatrist, Perth.",
   },
   {
     slug: "j-obrien",
+    portrait: "doctor-j-obrien",
     name: "Dr. J. O'Brien",
     discipline: "GP · Longevity",
     city: "MEL",
@@ -88,10 +90,10 @@ export const DOCTORS: Doctor[] = [
     years: 8,
     reads: "LNG",
     bio: "GP with a Monash longevity fellowship. Leads the longevity program and pace-of-ageing reads.",
-    portraitAlt: "Portrait of Dr. J. O'Brien, GP, Melbourne.",
   },
   {
     slug: "s-crawford",
+    portrait: "doctor-s-crawford",
     name: "Dr. S. Crawford",
     discipline: "Sexual health",
     city: "SYD",
@@ -99,7 +101,6 @@ export const DOCTORS: Doctor[] = [
     years: 14,
     reads: "SXL",
     bio: "Sexual medicine, 14 years. Co-reads sexual health across both programs.",
-    portraitAlt: "Portrait of Dr. S. Crawford, sexual health physician, Sydney.",
   },
 ];
 

@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/Card";
 import { DoctorCard } from "@/components/ui/DoctorCard";
 import { Editorial } from "@/components/ui/Editorial";
 import { MonoData, MonoTag } from "@/components/ui/MonoTag";
-import { Placeholder } from "@/components/ui/Placeholder";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { StatRail } from "@/components/ui/StatRail";
 import { DOCTORS, doctorBySlug } from "@/content/doctors";
 
@@ -51,7 +51,7 @@ export default function DoctorsPage() {
 
       <Section ground="muted">
         <Card className="grid gap-0 lg:grid-cols-[0.8fr_1fr]">
-          <Placeholder ratio="4 / 5" brief={lead.portraitAlt} code={lead.ahpra} />
+          <SiteImage id={lead.portrait} ratio="4 / 5" code={lead.ahpra} sizes="(max-width: 1024px) 100vw, 480px" />
           <div className="flex flex-col gap-[var(--space-3)] p-[var(--card-padding)]">
             <MonoTag>Lead clinician · {lead.discipline}</MonoTag>
             <h2 className="t-h2 m-0 text-text-primary">
@@ -120,10 +120,10 @@ export default function DoctorsPage() {
           Your panel is read by one of them<span className="mark">.</span>
         </h2>
         <p className="t-body mt-[var(--space-4)] max-w-[var(--container-text)] text-text-secondary">
-          $99 covers the assessment, the panel and the consult. Refunded in full if your
+          $149 covers the assessment, the panel and the consult. Refunded in full if your
           doctor declines to prescribe.
         </p>
-        <Button href="/assessment">Start for $99 →</Button>
+        <Button href="/assessment">Start for $149 →</Button>
       </Section>
     </>
   );

@@ -1,17 +1,22 @@
 import Link from "next/link";
 import { Card } from "./Card";
 import { MonoTag, MonoData } from "./MonoTag";
-import { Placeholder } from "./Placeholder";
+import { SiteImage } from "./SiteImage";
 import { PRICING, type Protocol } from "@/content/protocols";
 
 /**
  * Route from a body system to its program page. Price is stated the one way
- * the system states it: $99 to start, ongoing care only if indicated.
+ * the system states it: $149 to start, and a plan only if it is indicated.
  */
 export function ProtocolCard({ protocol }: { protocol: Protocol }) {
   return (
     <Card as="li" interactive className="flex flex-col">
-      <Placeholder brief={protocol.imageAlt} code={protocol.code} height="220px" />
+      <SiteImage
+        id={protocol.image}
+        code={protocol.code}
+        height="220px"
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
+      />
 
       <div className="flex flex-1 flex-col gap-[var(--space-3)] p-[var(--card-padding)]">
         <div className="flex flex-wrap gap-[var(--space-2)]">

@@ -1,0 +1,202 @@
+{
+  "hero-portrait": {
+    "alt": "A woman in her forties standing in the hallway of an ordinary house, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113240_faac52db-4bf1-40b5-8948-c5f22531b11d.png",
+    "job": "faac52db-4bf1-40b5-8948-c5f22531b11d",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian woman in her early forties standing in a plain painted hallway of an ordinary house, lit by one window to her left. She looks directly into the lens with a calm, neutral expression, mouth closed. Unretouched skin, visible pores and fine lines, no makeup, hair unstyled. Plain grey marle t-shirt. Empty wall behind her. Soft daylight, medium contrast, true blacks, clean off-white highlights, fine film grain. Quiet, plain and real. No text, no logos, no props, no medical equipment, no lab coat, no stethoscope, no clinic."
+  },
+  "fork-him": {
+    "alt": "A man in his forties standing in the hallway of an ordinary house, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113405_bda9a103-2401-4f42-8494-509e3538b554.png",
+    "job": "bda9a103-2401-4f42-8494-509e3538b554",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian man in his mid forties standing in the plain hallway of an ordinary house, lit by one window to his left. He looks directly into the lens, calm neutral expression, mouth closed. Unretouched skin, visible pores, lines and stubble, hair unstyled. Plain dark t-shirt. Empty painted wall behind him. Soft daylight, medium contrast, true blacks, clean off-white highlights, fine film grain. Quiet, plain and real. No text, no logos, no props, no medical equipment, no lab coat, no stethoscope, no clinic."
+  },
+  "fork-her": {
+    "alt": "A woman in her forties standing beside a kitchen window in an ordinary house, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113405_500a76a9-37c7-4b34-95d2-a211f1ae7028.png",
+    "job": "500a76a9-37c7-4b34-95d2-a211f1ae7028",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian woman in her mid forties standing beside a kitchen window in an ordinary house, side-lit by daylight. She looks directly into the lens, calm neutral expression, mouth closed. Unretouched skin, visible pores and fine lines, grey showing in her hair, no makeup. Plain linen shirt. Empty wall behind her. Soft daylight, medium contrast, true blacks, clean off-white highlights, fine film grain. Quiet, plain and real. No text, no logos, no props, no medical equipment, no lab coat, no stethoscope, no clinic."
+  },
+  "doctors-band": {
+    "alt": "A doctor sitting at a plain desk in an ordinary consulting room, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113405_92c9bfdd-ddc5-478d-b6e0-bbe399a426d1.png",
+    "job": "92c9bfdd-ddc5-478d-b6e0-bbe399a426d1",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian doctor in her fifties sitting at a plain desk in an ordinary consulting room, turned toward the camera, forearms on the desk. Direct gaze, calm neutral expression, mouth closed. Unretouched skin, visible lines, grey in her hair, no makeup. Plain shirt, no lab coat, no stethoscope, nothing worn as costume. Bare wall and one window behind her, desk empty. Soft daylight, medium contrast, true blacks, fine film grain. No text, no logos, no medical equipment, no vials, no syringes, no pills, no clinic signage."
+  },
+  "doctor-a-reid": {
+    "alt": "Portrait of Dr. A. Reid, standing against a plain wall, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113405_a151f21f-325d-4efa-9ec6-7d82555f4c65.png",
+    "job": "a151f21f-325d-4efa-9ec6-7d82555f4c65",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian woman in her early fifties, endocrinologist, standing against a plain painted wall in an ordinary office, lit by one window. Direct gaze into the lens, calm and unsmiling. Unretouched skin, visible lines, hair pulled back, no makeup. Plain dark shirt, no lab coat, no stethoscope. Nothing else in frame. Soft daylight, medium contrast, true blacks, fine film grain. No text, no logos, no medical equipment, no clinic."
+  },
+  "doctor-m-holt": {
+    "alt": "Portrait of Dr. M. Holt, standing against a plain wall, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113405_e28bc017-7f14-4371-809d-cfc85020371a.png",
+    "job": "e28bc017-7f14-4371-809d-cfc85020371a",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian man in his late thirties, sports physician, standing against a plain wall in an ordinary room, lit by one window. Direct gaze into the lens, calm and unsmiling. Unretouched skin, visible stubble and lines, short hair. Plain crew-neck shirt, no lab coat, no stethoscope. Nothing else in frame. Soft daylight, medium contrast, true blacks, fine film grain. No text, no logos, no medical equipment, no clinic."
+  },
+  "doctor-r-bennett": {
+    "alt": "Portrait of Dr. R. Bennett, standing against a plain wall, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113405_3fb0f508-05e2-4b16-a577-c67afceaad4c.png",
+    "job": "3fb0f508-05e2-4b16-a577-c67afceaad4c",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian woman in her mid forties, general practitioner, standing against a plain painted wall in an ordinary room, lit by one window. Direct gaze into the lens, calm and unsmiling. Unretouched skin, visible lines, shoulder-length hair unstyled, no makeup. Plain shirt, no lab coat, no stethoscope. Nothing else in frame. Soft daylight, medium contrast, true blacks, fine film grain. No text, no logos, no medical equipment, no clinic."
+  },
+  "doctor-k-wong": {
+    "alt": "Portrait of Dr. K. Wong, standing against a plain wall, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113405_29427532-a2f3-4f3b-839f-b7cd2942a369.png",
+    "job": "29427532-a2f3-4f3b-839f-b7cd2942a369",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian man of East Asian descent in his early fifties, sleep physician, standing against a plain wall in an ordinary room, lit by one window. Direct gaze into the lens, calm and unsmiling. Unretouched skin, visible lines, glasses. Plain shirt, no lab coat, no stethoscope. Nothing else in frame. Soft daylight, medium contrast, true blacks, fine film grain. No text, no logos, no medical equipment, no clinic."
+  },
+  "doctor-l-mackenzie": {
+    "alt": "Portrait of Dr. L. Mackenzie, standing against a plain wall, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113405_35c2eb3b-2b5e-42bf-acaf-00e132063510.png",
+    "job": "35c2eb3b-2b5e-42bf-acaf-00e132063510",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian woman in her late forties, psychiatrist, standing against a plain painted wall in an ordinary room, lit by one window. Direct gaze into the lens, calm and unsmiling. Unretouched skin, visible lines, short grey-streaked hair, no makeup. Plain knit top, no lab coat, no stethoscope. Nothing else in frame. Soft daylight, medium contrast, true blacks, fine film grain. No text, no logos, no medical equipment, no clinic."
+  },
+  "doctor-j-obrien": {
+    "alt": "Portrait of Dr. J. O'Brien, standing against a plain wall, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113405_28707021-1ae5-4276-bcc4-f8c167b67501.png",
+    "job": "28707021-1ae5-4276-bcc4-f8c167b67501",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian man in his late thirties, general practitioner, standing against a plain wall in an ordinary room, lit by one window. Direct gaze into the lens, calm and unsmiling. Unretouched skin, visible stubble, dark curly hair. Plain shirt with the sleeves rolled, no lab coat, no stethoscope. Nothing else in frame. Soft daylight, medium contrast, true blacks, fine film grain. No text, no logos, no medical equipment, no clinic."
+  },
+  "doctor-s-crawford": {
+    "alt": "Portrait of Dr. S. Crawford, standing against a plain wall, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113405_5d445140-76cd-44ce-a64a-fa6a31ad07d2.png",
+    "job": "5d445140-76cd-44ce-a64a-fa6a31ad07d2",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian woman of South Asian descent in her early fifties, physician, standing against a plain painted wall in an ordinary room, lit by one window. Direct gaze into the lens, calm and unsmiling. Unretouched skin, visible lines, hair tied back, no makeup. Plain dark shirt, no lab coat, no stethoscope. Nothing else in frame. Soft daylight, medium contrast, true blacks, fine film grain. No text, no logos, no medical equipment, no clinic."
+  },
+  "hormonal-hero": {
+    "alt": "A man in his forties sitting at a kitchen table in an ordinary house, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113405_8d5f3f94-a4ea-4775-895b-fd5bddc65790.png",
+    "job": "8d5f3f94-a4ea-4775-895b-fd5bddc65790",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian man in his late forties sitting at a plain kitchen table in an ordinary house, morning light from one window. He looks directly into the lens, calm neutral expression, forearms resting on the table. Unretouched skin, visible lines and grey stubble. Plain shirt. Bare table, empty wall behind. Soft daylight, medium contrast, true blacks, fine film grain. Quiet and plain. No text, no logos, no props, no medical equipment, no lab coat, no clinic."
+  },
+  "closing-cta": {
+    "alt": "A woman in her forties sitting by a window in an ordinary living room, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113405_23e6da68-1c1c-463e-93ab-91cafb57cabf.png",
+    "job": "23e6da68-1c1c-463e-93ab-91cafb57cabf",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian woman in her early forties sitting by a window in an ordinary living room, late afternoon light across her face. She looks directly into the lens, calm neutral expression, mouth closed. Unretouched skin, visible pores and fine lines, hair loose and unstyled, no makeup. Plain jumper. Bare wall behind her. Soft daylight, medium contrast, true blacks, fine film grain. Quiet and plain. No text, no logos, no props, no medical equipment, no lab coat, no clinic."
+  },
+  "hormonal-him-hero": {
+    "alt": "A man in his forties standing against a plain wall in side light, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113443_9a0c83ae-5303-4d3b-88a4-8a0d46283853.png",
+    "job": "9a0c83ae-5303-4d3b-88a4-8a0d46283853",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian man in his early forties standing against a plain painted wall in an ordinary room, lit hard from one side by a single window. He looks directly into the lens, calm and unsmiling, shoulders square. Unretouched skin, visible pores, stubble and lines. Plain dark t-shirt. Nothing else in frame. Deep true blacks, clean off-white highlights, medium contrast, fine film grain. Severe, plain, real. No text, no logos, no props, no medical equipment, no lab coat, no clinic."
+  },
+  "hormonal-her-hero": {
+    "alt": "A woman in her forties standing against a plain wall in side light, looking at the camera.",
+    "treatment": "mono",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113443_bd4524cf-9e50-4bf0-ace6-d08230094ce7.png",
+    "job": "bd4524cf-9e50-4bf0-ace6-d08230094ce7",
+    "prompt": "Black and white 35mm editorial documentary portrait, Kodak Tri-X 400 grain. An Australian woman in her mid forties standing against a plain painted wall in an ordinary room, lit softly from one side by a single window. She looks directly into the lens, calm and unsmiling, shoulders square. Unretouched skin, visible pores and fine lines, hair loose, no makeup. Plain top. Nothing else in frame. Deep true blacks, clean off-white highlights, medium contrast, fine film grain. Severe, plain, real. No text, no logos, no props, no medical equipment, no lab coat, no clinic."
+  },
+  "programme-recovery": {
+    "alt": "A man sitting on the edge of a bed in an ordinary bedroom, taping his knee.",
+    "treatment": "colour",
+    "aspect": "4:3",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_112800_c624e6a0-2905-4032-a7fc-2d8f1a475257.png",
+    "job": "c624e6a0-2905-4032-a7fc-2d8f1a475257",
+    "prompt": "Editorial documentary photograph, 35mm film, Kodak Portra, muted low-saturation colour. An Australian man in his late thirties sits on the edge of an unmade bed in an ordinary suburban bedroom, early morning, taping his own knee. Photographed from a low neutral angle, he is looking down at his hands, absorbed, not performing. Unretouched skin, visible body hair and scars, no gym styling. Warm neutral palette of off-white walls, cream linen and charcoal shadow. Soft directional window light, gentle contrast, fine film grain, shallow depth of field. Plain, quiet, undramatic. No text, no logos, no branded clothing, no medical equipment, no vials, no syringes, no pills, no lab coat, no clinic."
+  },
+  "programme-performance": {
+    "alt": "A man resting on a bench between sets in an ordinary suburban gym.",
+    "treatment": "colour",
+    "aspect": "4:3",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113443_d42ed244-bce0-4d9a-95cd-bca89ce4dbe4.png",
+    "job": "d42ed244-bce0-4d9a-95cd-bca89ce4dbe4",
+    "prompt": "Editorial documentary photograph, 35mm film, Kodak Portra 400, muted low-saturation colour. An Australian man in his early forties resting between sets on a bench in an ordinary suburban gym, forearms on his knees, looking away from the camera, absorbed. Unretouched skin, plain unbranded training clothes, no gym styling. Warm neutral palette, off-white walls, worn rubber floor. Soft directional daylight from a high window, gentle contrast, fine film grain, shallow depth of field. Plain, quiet, undramatic. No text, no logos, no branded clothing, no medical equipment, no supplements, no clinic."
+  },
+  "programme-sleep": {
+    "alt": "An unmade bed in an ordinary bedroom at dawn, curtain half drawn.",
+    "treatment": "colour",
+    "aspect": "4:3",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113443_e6308a9e-198f-4cec-9053-8593d47bfa69.png",
+    "job": "e6308a9e-198f-4cec-9053-8593d47bfa69",
+    "prompt": "Editorial documentary photograph, 35mm film, Kodak Portra 400, muted low-saturation colour. An empty unmade bed in an ordinary Australian bedroom just after dawn, creased cream linen, one pillow dented, curtain half drawn, a glass of water on the sill. No people. Warm neutral palette of off-white walls, cream bedding and charcoal shadow. Soft blue-grey early light, gentle contrast, fine film grain. Still and plain. No text, no logos, no medical equipment, no pills, no clinic."
+  },
+  "programme-hormonal-him": {
+    "alt": "A man standing at a kitchen bench early in the morning, holding a mug.",
+    "treatment": "colour",
+    "aspect": "4:3",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113443_eb2e2e56-043f-4c48-809e-b4eabf36d6e1.png",
+    "job": "eb2e2e56-043f-4c48-809e-b4eabf36d6e1",
+    "prompt": "Editorial documentary photograph, 35mm film, Kodak Portra 400, muted low-saturation colour. An Australian man in his mid forties standing at a kitchen bench in an ordinary house early in the morning, holding a mug, looking out of frame, absorbed and unposed. Unretouched skin, plain clothes, hair unbrushed. Warm neutral palette, off-white cupboards, cream benchtop, charcoal shadow. Soft window light, gentle contrast, fine film grain, shallow depth of field. Plain and undramatic. No text, no logos, no branded packaging, no medical equipment, no pills, no clinic."
+  },
+  "programme-hormonal-her": {
+    "alt": "A woman sitting on the arm of a sofa in an ordinary living room in the afternoon.",
+    "treatment": "colour",
+    "aspect": "4:3",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113443_0301c24d-cbe5-43d7-99e3-ba75efdb53e7.png",
+    "job": "0301c24d-cbe5-43d7-99e3-ba75efdb53e7",
+    "prompt": "Editorial documentary photograph, 35mm film, Kodak Portra 400, muted low-saturation colour. An Australian woman in her mid forties sitting on the arm of a sofa in an ordinary living room in the afternoon, one hand in her hair, looking out of frame, absorbed and unposed. Unretouched skin, no makeup, plain clothes. Warm neutral palette, off-white walls, cream upholstery, charcoal shadow. Soft window light, gentle contrast, fine film grain, shallow depth of field. Plain and undramatic. No text, no logos, no medical equipment, no pills, no clinic."
+  },
+  "programme-longevity": {
+    "alt": "A woman in her fifties walking a quiet suburban footpath at dusk.",
+    "treatment": "colour",
+    "aspect": "4:3",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113443_4afe3749-6559-4009-a5c3-51484ecfdfa2.png",
+    "job": "4afe3749-6559-4009-a5c3-51484ecfdfa2",
+    "prompt": "Editorial documentary photograph, 35mm film, Kodak Portra 400, muted low-saturation colour. An Australian woman in her late fifties walking a quiet suburban footpath at dusk, seen from a short distance, mid-stride, not aware of the camera. Ordinary street, brick fences, a jacaranda, parked car. Unretouched, plain clothes. Warm neutral palette with charcoal shadow and a low amber sky. Soft failing daylight, gentle contrast, fine film grain. Plain and undramatic. No text, no logos, no medical equipment, no clinic."
+  },
+  "programme-sexual": {
+    "alt": "A couple sitting on the end of a bed in an ordinary bedroom, seen from behind.",
+    "treatment": "colour",
+    "aspect": "4:3",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113443_7080c9fb-904e-4ded-8a04-bf904f6f8c53.png",
+    "job": "7080c9fb-904e-4ded-8a04-bf904f6f8c53",
+    "prompt": "Editorial documentary photograph, 35mm film, Kodak Portra 400, muted low-saturation colour. An Australian couple in their forties sitting on the end of a bed in an ordinary bedroom in the morning, seen from behind and to one side, close but not touching, both looking away from the camera. Fully clothed, plain clothes, unretouched. Warm neutral palette, off-white wall, cream linen, charcoal shadow. Soft window light, gentle contrast, fine film grain. Quiet, plain, not sensual, not staged. No text, no logos, no medical equipment, no pills, no clinic."
+  },
+  "journal-014": {
+    "alt": "A close study of an adult's knee and lower thigh, sitting on a wooden floor.",
+    "treatment": "colour",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113443_2a6580a6-62c1-41ed-bb1d-d7e59c16e3cf.png",
+    "job": "2a6580a6-62c1-41ed-bb1d-d7e59c16e3cf",
+    "prompt": "Editorial documentary photograph, 35mm film, Kodak Portra 400, muted low-saturation colour. Close study of a human knee and lower thigh, an adult sitting on a plain wooden floor in an ordinary room, hands resting either side. Skin unretouched with visible hair, texture and an old scar. No face in frame. Warm neutral palette, off-white wall, cream floorboards. Soft window light raking across, gentle contrast, fine film grain, shallow depth of field. Plain, anatomical, undramatic. No text, no logos, no medical equipment, no bandage, no clinic."
+  },
+  "journal-013": {
+    "alt": "A printed page lying on a kitchen bench beside a cup of tea, seen from above.",
+    "treatment": "colour",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113443_641bc1c0-d75a-43a3-b38b-58b0011e3960.png",
+    "job": "641bc1c0-d75a-43a3-b38b-58b0011e3960",
+    "prompt": "Editorial documentary photograph, 35mm film, Kodak Portra 400, muted low-saturation colour. A plain paper document lying on a bare kitchen bench beside a cold cup of tea, seen from directly above, the text too soft to read. Ordinary Australian kitchen, morning light. Warm neutral palette of off-white paper, cream benchtop and charcoal shadow. Soft window light, gentle contrast, fine film grain. Still, plain, unstyled. No legible text, no logos, no branding, no medical equipment, no pills, no clinic."
+  },
+  "journal-012": {
+    "alt": "An adult walking a suburban street mid-morning, seen from across the road.",
+    "treatment": "colour",
+    "aspect": "3:4",
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_302vtY04kC9nbtUjJJAhLoDVMFw/hf_20260823_113443_bf47f5bd-6292-4883-82e6-df695bdb4b86.png",
+    "job": "bf47f5bd-6292-4883-82e6-df695bdb4b86",
+    "prompt": "Editorial documentary photograph, 35mm film, Kodak Portra 400, muted low-saturation colour. An Australian adult in their fifties walking a suburban street mid-morning, seen from across the road at a distance, small in the frame against brick fences and a wide pale sky. Ordinary clothes, unaware of the camera. Warm neutral palette, off-white sky, cream brick, charcoal shadow. Flat soft daylight, gentle contrast, fine film grain. Plain and undramatic. No text, no logos, no medical equipment, no clinic."
+  }
+}

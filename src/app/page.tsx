@@ -8,7 +8,7 @@ import { DoctorCard } from "@/components/ui/DoctorCard";
 import { Editorial } from "@/components/ui/Editorial";
 import { ForkBlock } from "@/components/ui/ForkBlock";
 import { MonoData, MonoTag } from "@/components/ui/MonoTag";
-import { Placeholder } from "@/components/ui/Placeholder";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { ProtocolCard } from "@/components/ui/ProtocolCard";
 import { ReferenceRangeSet } from "@/components/ui/ReferenceRangeBar";
 import { StatRail } from "@/components/ui/StatRail";
@@ -106,10 +106,12 @@ export default function HomePage() {
             />
           </div>
 
-          <Placeholder
+          <SiteImage
+            id="hero-portrait"
             height="680px"
             code="Subject 014 · Studio 02"
-            brief="Editorial portrait of an Australian adult in their forties, unretouched, natural light, direct gaze."
+            priority
+            sizes="(max-width: 1024px) 100vw, 700px"
           />
         </div>
       </Section>
@@ -123,7 +125,7 @@ export default function HomePage() {
           cta: "Start his assessment →",
           href: "/protocols/hormonal/him",
           note: "3 min · confidential",
-          brief: "Male subject, mid-forties, ordinary interior, direct gaze.",
+          image: "fork-him",
           tags: ["HRM · M", "RCV", "SLP", "SXL · M", "LNG"],
         }}
         her={{
@@ -133,7 +135,7 @@ export default function HomePage() {
           cta: "Start her assessment →",
           href: "/protocols/hormonal/her",
           note: "3 min · confidential",
-          brief: "Female subject, early forties, ordinary interior, direct gaze.",
+          image: "fork-her",
           tags: ["HRM · W", "RCV", "SLP", "SXL · W", "LNG · W"],
         }}
       />
@@ -296,7 +298,7 @@ export default function HomePage() {
                 "Bulk-billed → private gap",
                 "$800–$2,000 / month",
                 "Low up-front, high biological risk",
-                "$99 to start · ongoing care from $180/mo if indicated",
+                "$149 to start · a plan, and its cost, decided on the consult",
               ],
               [
                 "Time to start",
@@ -369,10 +371,11 @@ export default function HomePage() {
       {/* 13 — Doctors */}
       <Section ground="page">
         <div className="grid gap-[var(--space-8)] lg:grid-cols-[0.85fr_1.15fr]">
-          <Placeholder
+          <SiteImage
+            id="doctors-band"
             height="600px"
             code="DR · 002"
-            brief="Lead clinician at their desk, ordinary consulting room, no lab coat, no props."
+            sizes="(max-width: 1024px) 100vw, 520px"
           />
           <div>
             <MonoTag index="07">The doctors behind it</MonoTag>
@@ -488,7 +491,7 @@ export default function HomePage() {
         <ul className="mt-[var(--space-6)] grid list-none gap-[var(--space-6)] p-0 md:grid-cols-3">
           {JOURNAL.map((j) => (
             <li key={j.issue}>
-              <Placeholder ratio="4 / 5" brief={j.brief} code={j.issue} />
+              <SiteImage id={j.image} ratio="4 / 5" code={j.issue} sizes="(max-width: 768px) 100vw, 400px" />
               <p className="mt-[var(--space-3)] mb-0">
                 <MonoData className="text-text-secondary">
                   {j.issue} · {j.category}
@@ -505,9 +508,12 @@ export default function HomePage() {
         </ul>
       </Section>
 
-      {/* 18 — Final CTA */}
+      {/* 18 — Final CTA. The handoff runs the frame full-bleed under a gradient
+          scrim; the frame sits beside the type instead, so neither the
+          photograph nor the display setting is compromised by the other. */}
       <section data-ground="inverse">
-        <Container className="flex min-h-[520px] flex-col justify-end py-[var(--space-9)]">
+        <Container className="grid min-h-[520px] items-end gap-[var(--space-8)] py-[var(--space-9)] lg:grid-cols-[1fr_0.7fr]">
+        <div>
           <MonoTag>A higher state of human performance</MonoTag>
           <h2 className="t-display mt-[var(--space-4)] text-text-primary">
             Get peppered<span className="mark">.</span>
@@ -522,6 +528,12 @@ export default function HomePage() {
               Speak with a doctor
             </Button>
           </div>
+        </div>
+        <SiteImage
+          id="closing-cta"
+          height="420px"
+          sizes="(max-width: 1024px) 100vw, 420px"
+        />
         </Container>
       </section>
 

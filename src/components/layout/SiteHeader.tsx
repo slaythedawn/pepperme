@@ -64,7 +64,7 @@ export function SiteHeader() {
             Sign in
           </Link>
           <Button href="/assessment" className="hidden sm:inline-flex">
-            Start for $99
+            Start for $149
           </Button>
           <button
             type="button"
@@ -96,7 +96,7 @@ export function SiteHeader() {
             <div className="mt-[var(--space-4)] flex flex-wrap items-center gap-[var(--space-3)]">
               <ViewToggle className="sm:hidden" />
               <Button href="/assessment" className="sm:hidden">
-                Start for $99
+                Start for $149
               </Button>
             </div>
           </Container>

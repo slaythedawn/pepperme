@@ -67,8 +67,8 @@ build-blocking. In this build:
   ferritin …) are kept: those are measured data on a panel, not a prescribed
   medicine.
 - **No depiction of a medicine.** The 3ml vial SVG and the "in the box"
-  section — vials, syringes, sharps container — are not built. `Placeholder`
-  carries the rule for whoever wires real photography in.
+  section — vials, syringes, sharps container — are not built, and the
+  exclusion is written into every image prompt in the manifest.
 - **No before-and-after, no interpretation on a data display.** The charts and
   the reference range bar show values, units and intervals with no target, no
   arrow and no recommendation.
@@ -76,6 +76,39 @@ build-blocking. In this build:
 - Every protocol, pricing, science and assessment page carries the compliance
   note, rendered through `Disclaimer` — Cream ground, hairline, Ink 60, never
   styled as an alert.
+
+## Imagery
+
+Every frame on the site is generated on Higgsfield (`soul_2`, 2k) against one
+locked recipe, so the whole site reads as a single shoot rather than a stock
+library:
+
+> Editorial documentary, 35mm film, natural window light. Real Australian
+> adults 30–60, unretouched, no makeup or styling, direct gaze or genuinely
+> absorbed in something — never performing. Ordinary domestic interiors, plain
+> walls, nothing staged. Warm neutral palette against the brand grounds:
+> off-white, cream, deep charcoal. Soft light, medium contrast, fine grain.
+
+Portraits are shot and rendered black and white (Tri-X); programme and journal
+frames stay in muted colour (Portra). Every prompt carries the same exclusion
+list — no medicine, vial, syringe, capsule, lab coat, stethoscope, clinic or
+pharmacy, and no stock-photo expression.
+
+`src/content/imagery.json` is the manifest and the source of truth: one entry
+per frame, holding its alt string (public copy, compliance-bound), its
+treatment, the Higgsfield job id, and **the exact prompt that produced it** — so
+any frame can be regenerated on tone rather than rewritten from scratch.
+`src/components/ui/SiteImage.tsx` renders it: zero radius, no border, no
+overlay, no scrim.
+
+**Before launch, run `npm run fetch:images`.** The manifest still points at
+Higgsfield's CDN; the script downloads every frame into `public/images`,
+rewrites the manifest to local paths, and is idempotent. Then drop the
+`remotePatterns` entry from `next.config.ts`. A generation CDN is not an asset
+host.
+
+To reshoot one frame: take its `prompt` from the manifest, adjust the subject
+line only, regenerate, and swap the `src` and `job`.
 
 ## Reference range bar
 
@@ -100,23 +133,24 @@ as the handoff instructs.
 
 Three further calls, made in the same spirit:
 
-1. **Pricing is reconciled to the $99 model.** `pricing.html` still carried the
-   older $280–$640/month per-protocol table, priced against named medicines. The
-   handoff states the $99 model on the protocol pages is correct, so $99 —
-   assessment, panel, 30-minute consult, refunded if the doctor declines — is the
-   single entry price sitewide, and ongoing care is stated once, as "from
-   $180/month, if indicated". The per-program table now compares what gets read,
-   not what gets dispensed.
+1. **One price: $149 up front, and no monthly figure anywhere.** The pricing
+   prototype carried a $280–$640/month per-protocol table priced against named
+   medicines. All of it is gone. $149 — assessment, panel, 30-minute consult,
+   refunded in full if the doctor declines — is the single entry price sitewide.
+   Nothing on the site quotes a monthly cost: what ongoing care costs depends on
+   the plan the doctor recommends, and around 14% of assessments end without one.
+   `PRICING.ongoingLine` in `src/content/protocols.ts` is the single sentence
+   used wherever that question comes up. The per-program table compares what
+   gets read, not what gets dispensed.
 2. **The closing CTA on `/protocols/hormonal` sits on Ink, not Pepper 600.** The
    handoff draws it on a Pepper 600 ground; the design system forbids coloured
    surfaces and caps Pepper 600 at one filled action per viewport. Ink ground,
    Pepper 600 button.
-3. **Photography is not shipped.** Every image in the bundle is a hotlinked
-   Unsplash URL and the brief is explicit that none of it ships, so image slots
-   render through `Placeholder`: the crop is held, the commissioning brief is
-   stated, and nothing is depicted. Replace it with `next/image` when the
-   commissioned photography lands — and run the alt string past the compliance
-   rules first, because alt text is public copy.
+3. **The homepage closing CTA sets its frame beside the type, not under it.**
+   The handoff runs it full-bleed under a gradient scrim. Neither the photograph
+   nor a 96px display setting survives that well, so the frame sits in its own
+   column on the Ink ground — no scrim, which is also what the design system
+   asks for.
 
 ## Structure
 
@@ -126,7 +160,7 @@ src/
   components/
     layout/                Container, Section, header, footer, wordmark
     ui/                    Button, Card, MonoTag, Faq, DataTable, Field,
-                           Disclaimer, Placeholder, ReferenceRangeBar, …
+                           Disclaimer, SiteImage, ReferenceRangeBar, …
     charts/                LineChart, BarChart — hairline and mono, no fills
     view/                  the Him/Her state container and its consumers
     pages/                 the two multi-section page bodies
@@ -146,7 +180,7 @@ context band, the cross-link copy, and the selector on step 1 of the assessment.
 
 ## Still to do
 
-- Commissioned photography, replacing `Placeholder`.
+- `npm run fetch:images`, then drop `remotePatterns` from `next.config.ts`.
 - Real endpoints for the assessment; it currently holds state and takes no
   payment, which matches the design.
 - The remaining protocol trios (recovery, performance, sleep, sexual health,

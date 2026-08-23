@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     template: `%s — ${SITE.name}`,
   },
   description:
-    "Australian doctor-led telehealth. A $99 assessment, a comprehensive blood panel and a consult with an AHPRA-registered Australian doctor who reads the whole panel.",
+    "Australian doctor-led telehealth. A $149 assessment, a comprehensive blood panel and a consult with an AHPRA-registered Australian doctor who reads the whole panel.",
 };
 
 export default function RootLayout({

@@ -10,7 +10,7 @@ import { Editorial } from "@/components/ui/Editorial";
 import { Faq } from "@/components/ui/Faq";
 import { ForkBlock } from "@/components/ui/ForkBlock";
 import { MonoData, MonoTag } from "@/components/ui/MonoTag";
-import { Placeholder } from "@/components/ui/Placeholder";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { ReferenceRangeSet } from "@/components/ui/ReferenceRangeBar";
 import { SAMPLE_PANEL } from "@/content/biomarkers";
 import { doctorBySlug } from "@/content/doctors";
@@ -20,7 +20,7 @@ import { COMPLIANCE_NOTE } from "@/content/site";
 export const metadata: Metadata = {
   title: "Hormonal care",
   description:
-    "A doctor-led, panel-driven hormonal program. $99 covers the assessment, a 60+ marker endocrine panel and a consult with an Australian doctor — refunded if they decline.",
+    "A doctor-led, panel-driven hormonal program. $149 covers the assessment, a 60+ marker endocrine panel and a consult with an Australian doctor — refunded if they decline.",
 };
 
 const SYMPTOMS = [
@@ -72,23 +72,23 @@ const INCLUSIONS = [
   {
     label: "04 · If indicated",
     title: "A care plan, decided on the call",
-    body: `Discussed only after your panel is read — never advertised, never up-sold. From ${PRICING.ongoingFrom}${PRICING.ongoingInterval} once on program.`,
+    body: `Discussed only after your panel is read — never advertised, never up-sold. ${PRICING.ongoingLine}`,
     dark: true,
   },
 ];
 
 const FAQS = [
   {
-    q: "What does the $99 actually cover?",
+    q: "What does the $149 actually cover?",
     a: "Your full assessment, your endocrine blood panel (60+ markers), and a 30-minute one-on-one consult with an Australian doctor who reads it with you.",
   },
   {
     q: "What if my doctor declines?",
-    a: "Your $99 is refunded in full. You keep your bloods and your written read. Around 14% of assessments are declined — that's the program working as designed.",
+    a: "Your $149 is refunded in full. You keep your bloods and your written read. Around 14% of assessments are declined — that's the program working as designed.",
   },
   {
     q: "If a plan is indicated, what does ongoing care cost?",
-    a: "From $180/month for most members, all-in: care, re-bloods at week 8, doctor reviews. Discussed with your doctor on the consult, never before.",
+    a: "It depends on the plan. There is no standard monthly figure to quote, because what is prescribed — if anything — is decided by your doctor after your panel is read. You will have the full cost in front of you on the consult, before anything is charged.",
   },
   {
     q: "How long until the consult?",
@@ -153,10 +153,12 @@ export default function HormonalPage() {
             </Editorial>
           </div>
 
-          <Placeholder
+          <SiteImage
+            id="hormonal-hero"
             height="520px"
             code="HRM · 07–08"
-            brief="Adult in their forties at home, natural light, direct gaze, no medical props."
+            priority
+            sizes="(max-width: 1024px) 100vw, 560px"
           />
         </div>
       </Section>
@@ -214,7 +216,7 @@ export default function HormonalPage() {
           cta: `Start his assessment →`,
           href: "/protocols/hormonal/him",
           note: `Start for ${PRICING.entry}`,
-          brief: "Man in his forties, ordinary interior, direct gaze.",
+          image: "fork-him",
         }}
         her={{
           label: "HRM · W / 08 · For women",
@@ -223,11 +225,11 @@ export default function HormonalPage() {
           cta: `Start her assessment →`,
           href: "/protocols/hormonal/her",
           note: `Start for ${PRICING.entry}`,
-          brief: "Woman in her forties, ordinary interior, direct gaze.",
+          image: "fork-her",
         }}
       />
 
-      {/* What $99 gets you */}
+      {/* What $149 gets you */}
       <Section ground="muted">
         <div className="grid gap-[var(--space-8)] lg:grid-cols-[1fr_1.2fr]">
           <div>

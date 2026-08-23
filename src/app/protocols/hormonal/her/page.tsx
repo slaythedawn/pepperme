@@ -18,13 +18,12 @@ export default function HormonalHerPage() {
         intro:
           "If you searched “perimenopause specialist”, “hormone test for women” or “cycle clinic”, you found the right page. Pepper Me runs a women's-health-led program across cycle, perimenopause, mood, sleep and recovery — read together.",
         cta: "Start her assessment →",
-        heroBrief:
-          "Woman in her forties at home, unretouched, natural light, direct gaze, no medical props.",
+        heroImage: "hormonal-her-hero",
         stats: [
           { value: "14", label: "AHPRA doctors" },
           { value: "62", label: "Markers, female endocrine panel" },
           { value: "24 hr", label: "Assessment reviewed within" },
-          { value: "$99", label: "To start" },
+          { value: "$149", label: "To start" },
         ],
         qualifierHeading: "Women whose system is the answer",
         qualifiers: [
@@ -92,7 +91,7 @@ export default function HormonalHerPage() {
           },
           {
             q: "What if my doctor says no?",
-            a: "Your $99 is refunded in full and you keep your bloods and your written read. Around 14% of assessments are declined.",
+            a: "Your $149 is refunded in full and you keep your bloods and your written read. Around 14% of assessments are declined.",
           },
         ],
         complianceNote:

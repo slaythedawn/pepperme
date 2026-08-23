@@ -7,7 +7,7 @@ import { Disclaimer } from "../ui/Disclaimer";
 import { Editorial } from "../ui/Editorial";
 import { Faq, type QA } from "../ui/Faq";
 import { MonoData, MonoTag } from "../ui/MonoTag";
-import { Placeholder } from "../ui/Placeholder";
+import { SiteImage } from "../ui/SiteImage";
 import { ReferenceRangeSet, type Marker } from "../ui/ReferenceRangeBar";
 import { StatRail, type Stat } from "../ui/StatRail";
 import type { Doctor } from "@/content/doctors";
@@ -20,7 +20,8 @@ export type GenderedProgram = {
   title: string;
   intro: string;
   cta: string;
-  heroBrief: string;
+  /** Image slot id in imagery.json. */
+  heroImage: string;
   stats: Stat[];
   qualifierHeading: string;
   qualifiers: { title: string; body: string }[];
@@ -68,7 +69,12 @@ export function GenderedProgramPage({ program }: { program: GenderedProgram }) {
             </div>
             <StatRail className="mt-[var(--space-7)]" stats={program.stats} />
           </div>
-          <Placeholder height="480px" brief={program.heroBrief} />
+          <SiteImage
+            id={program.heroImage}
+            height="480px"
+            priority
+            sizes="(max-width: 1024px) 100vw, 640px"
+          />
         </Container>
       </section>
 
@@ -118,10 +124,11 @@ export function GenderedProgramPage({ program }: { program: GenderedProgram }) {
           <span className="mark">.</span>
         </h2>
         <Card className="mt-[var(--space-6)] grid gap-0 md:grid-cols-[0.6fr_1fr]">
-          <Placeholder
+          <SiteImage
+            id={program.doctor.portrait}
             ratio="4 / 5"
-            brief={program.doctor.portraitAlt}
             code={program.doctor.ahpra}
+            sizes="(max-width: 768px) 100vw, 400px"
           />
           <div className="flex flex-col gap-[var(--space-3)] p-[var(--card-padding)]">
             <MonoTag>
@@ -211,7 +218,7 @@ export function GenderedProgramPage({ program }: { program: GenderedProgram }) {
             href="/pricing"
             className="t-ui text-text-primary underline decoration-border-inactive decoration-1 underline-offset-4"
           >
-            See what ongoing care costs →
+            See what that covers →
           </Link>
         </div>
       </Section>

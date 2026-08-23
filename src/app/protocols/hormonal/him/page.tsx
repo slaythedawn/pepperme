@@ -18,13 +18,12 @@ export default function HormonalHimPage() {
         intro:
           "If you searched “male hormone clinic” or “testosterone test”, you found the right page. Pepper Me runs an endocrinology-led program of male hormonal care — comprehensive bloods, doctor consult, ongoing read.",
         cta: "Start his assessment →",
-        heroBrief:
-          "Man in his forties at home, unretouched, natural light, direct gaze, no medical props.",
+        heroImage: "hormonal-him-hero",
         stats: [
           { value: "14", label: "AHPRA doctors" },
           { value: "68", label: "Markers, male endocrine panel" },
           { value: "24 hr", label: "Assessment reviewed within" },
-          { value: "$99", label: "To start" },
+          { value: "$149", label: "To start" },
         ],
         qualifierHeading: "Men whose bloodwork explains it",
         qualifiers: [
@@ -84,7 +83,7 @@ export default function HormonalHimPage() {
           },
           {
             q: "What if my doctor says no?",
-            a: "Your $99 is refunded in full and you keep your bloods and your written read. Around 14% of assessments are declined.",
+            a: "Your $149 is refunded in full and you keep your bloods and your written read. Around 14% of assessments are declined.",
           },
           {
             q: "How long until I notice anything?",

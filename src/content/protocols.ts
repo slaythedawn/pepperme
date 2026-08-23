@@ -1,11 +1,11 @@
 /**
  * Programs of care, keyed by the system they act on.
  *
- * Pricing is stated the way the $99 model states it: $99 buys the assessment,
- * the panel and the consult, refunded if the doctor declines; ongoing care is
- * from $180/month and is only ever discussed on the consult. The per-protocol
- * monthly figures the earlier prototypes carried are superseded — see
- * "Known Divergences" in the handoff README.
+ * Pricing is stated one way and one way only: $149 buys the assessment, the
+ * panel and the consult, refunded if the doctor declines. No monthly figure is
+ * quoted anywhere, because there isn't one to quote — what ongoing care costs
+ * depends on the plan the doctor recommends, and that is decided on the consult.
+ * The per-protocol monthly figures the earlier prototypes carried are gone.
  *
  * Copy here never names a medicine. It names the body system, the archetype
  * and what the care includes.
@@ -23,7 +23,8 @@ export type Protocol = {
   includes: [string, string, string];
   href: string;
   cta: string;
-  imageAlt: string;
+  /** Image slot id in imagery.json. */
+  image: string;
 };
 
 export const PROTOCOLS: Protocol[] = [
@@ -41,7 +42,7 @@ export const PROTOCOLS: Protocol[] = [
     ],
     href: "/assessment",
     cta: "Start assessment",
-    imageAlt: "An adult stretching in a domestic room, natural light.",
+    image: "programme-recovery",
   },
   {
     code: "PRF — 02",
@@ -57,7 +58,7 @@ export const PROTOCOLS: Protocol[] = [
     ],
     href: "/assessment",
     cta: "Start assessment",
-    imageAlt: "A man resting between sets in an ordinary gym.",
+    image: "programme-performance",
   },
   {
     code: "SLP — 01",
@@ -73,7 +74,7 @@ export const PROTOCOLS: Protocol[] = [
     ],
     href: "/assessment",
     cta: "Start assessment",
-    imageAlt: "An unmade bed in early morning light.",
+    image: "programme-sleep",
   },
   {
     code: "HRM — M / 07",
@@ -89,7 +90,7 @@ export const PROTOCOLS: Protocol[] = [
     ],
     href: "/protocols/hormonal/him",
     cta: "Start his assessment",
-    imageAlt: "A man in his forties at a kitchen table, direct gaze.",
+    image: "programme-hormonal-him",
   },
   {
     code: "HRM — W / 08",
@@ -105,7 +106,7 @@ export const PROTOCOLS: Protocol[] = [
     ],
     href: "/protocols/hormonal/her",
     cta: "Start her assessment",
-    imageAlt: "A woman in her forties by a window, direct gaze.",
+    image: "programme-hormonal-her",
   },
   {
     code: "LNG — 09",
@@ -121,7 +122,7 @@ export const PROTOCOLS: Protocol[] = [
     ],
     href: "/assessment",
     cta: "Start assessment",
-    imageAlt: "An older adult walking a suburban street at dusk.",
+    image: "programme-longevity",
   },
   {
     code: "SXL — 03",
@@ -137,18 +138,25 @@ export const PROTOCOLS: Protocol[] = [
     ],
     href: "/assessment",
     cta: "Start assessment",
-    imageAlt: "A couple at home, seen from behind, natural light.",
+    image: "programme-sexual",
   },
 ];
 
-/** $99 model — stated identically wherever price appears. */
+/**
+ * The one price. Stated identically wherever price appears.
+ *
+ * There is deliberately no ongoing figure in this object. Quoting a monthly
+ * price before a doctor has read a panel promises a plan that may not be
+ * indicated — and around 14% of the time it isn't.
+ */
 export const PRICING = {
-  entry: "$99",
+  entry: "$149",
   entryIncludes: "assessment + blood panel + 30-min doctor consult + written read",
   declineRate: "~14%",
   refundLine: "Refunded in full if your doctor declines to prescribe.",
-  ongoingFrom: "$180",
-  ongoingInterval: "/month",
+  /** Use this wherever the ongoing cost would otherwise be quoted. */
+  ongoingLine:
+    "What ongoing care costs depends on the plan your doctor recommends. You'll have it in full on the consult, before anything is charged.",
 } as const;
 
 export const TREATMENT_AREAS = [

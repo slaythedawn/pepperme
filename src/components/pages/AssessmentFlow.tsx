@@ -7,7 +7,7 @@ import { Card } from "../ui/Card";
 import { Editorial } from "../ui/Editorial";
 import { Field, OptionButton } from "../ui/Field";
 import { MonoData, MonoTag } from "../ui/MonoTag";
-import { Placeholder } from "../ui/Placeholder";
+import { SiteImage } from "../ui/SiteImage";
 import { useView } from "../view/ViewProvider";
 import { doctorBySlug } from "@/content/doctors";
 import { PRICING } from "@/content/protocols";
@@ -265,7 +265,7 @@ export function AssessmentFlow() {
           {step === 4 ? (
             <div className="flex flex-col gap-[var(--space-5)]">
               <Card className="grid gap-0 sm:grid-cols-[0.6fr_1fr]">
-                <Placeholder ratio="4 / 5" brief={doctor.portraitAlt} code={doctor.ahpra} />
+                <SiteImage id={doctor.portrait} ratio="4 / 5" code={doctor.ahpra} sizes="240px" />
                 <div className="flex flex-col gap-[var(--space-2)] p-[var(--card-padding)]">
                   <MonoTag>Recommended doctor</MonoTag>
                   <h3 className="t-h3 m-0 text-text-primary">{doctor.name}</h3>

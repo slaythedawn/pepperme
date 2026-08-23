@@ -12,16 +12,17 @@ import { COMPLIANCE_NOTE } from "@/content/site";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "$99 covers the assessment, the blood panel and a consult with an Australian doctor — refunded in full if they decline. Ongoing care from $180/month, only if indicated.",
+    "$149 covers the assessment, the blood panel and a consult with an Australian doctor — refunded in full if they decline. What comes next depends on the plan your doctor recommends.",
 };
 
 /*
- * Reconciled to the $99 model.
+ * One price on this page: $149 to start.
  *
- * The pricing prototype still carried the older $280–$640/month per-protocol
- * table, priced against named medicines. Both had to go: the handoff states the
- * $99 model on the protocol pages is correct, and a public page may not name or
- * price a prescription medicine. What is priced here is the program of care.
+ * The pricing prototype carried a $280–$640/month per-protocol table priced
+ * against named medicines. All of it is gone. A public page may not name or
+ * price a prescription medicine, and no monthly figure is quoted at all —
+ * quoting one before a doctor has read a panel promises a plan that may not be
+ * indicated. What ongoing care costs is settled on the consult.
  *
  * No tier is marked "most popular" or "recommended" — that is a soft inducement.
  */
@@ -59,11 +60,11 @@ const ADD_ONS = [
 const FAQS = [
   {
     q: "Is there a membership fee?",
-    a: "No. $99 covers the assessment, the blood panel and the consult. If a plan is indicated, ongoing care is from $180/month and is discussed with your doctor on the consult — never before.",
+    a: "No. $149 covers the assessment, the blood panel and the consult. If a plan is indicated, what it costs depends on the plan itself — your doctor puts the full cost in front of you on the consult, before anything is charged.",
   },
   {
     q: "What if my doctor declines?",
-    a: "Your $99 is refunded in full. You keep your bloods and your written read. Around 14% of assessments are declined.",
+    a: "Your $149 is refunded in full. You keep your bloods and your written read. Around 14% of assessments are declined.",
   },
   {
     q: "Can I cancel mid-cycle?",
@@ -87,8 +88,7 @@ export default function PricingPage() {
         <p className="t-body-lg mt-[var(--space-5)] max-w-[var(--container-text)] text-text-secondary">
           No tier ladder, no annual fee. {PRICING.entry} covers your assessment, your
           comprehensive blood panel and a 30-minute consult with an Australian doctor who
-          reads it. If a plan is indicated, ongoing care is from {PRICING.ongoingFrom}
-          {PRICING.ongoingInterval} — decided on the consult, never advertised beforehand.
+          reads it. {PRICING.ongoingLine}
         </p>
         <div className="flex flex-wrap items-center gap-[var(--space-4)]">
           <Button href="/assessment">Start for {PRICING.entry} →</Button>
@@ -136,10 +136,10 @@ export default function PricingPage() {
           />
         </div>
         <p className="t-body-sm mt-[var(--space-5)] max-w-[var(--container-text)] text-text-secondary">
-          Ongoing care, if your doctor decides it is indicated, is from{" "}
-          {PRICING.ongoingFrom}
-          {PRICING.ongoingInterval} all-in — care, re-bloods and doctor reviews. What that
-          plan is, and what it costs for you, is discussed on the consult.
+          We don&rsquo;t publish a monthly figure. If your doctor decides a plan is
+          indicated, what it costs depends on that plan — and you see the whole of it on
+          the consult, before anything is charged. Around 14% of assessments end without
+          a plan at all, and those are refunded in full.
         </p>
       </Section>
 

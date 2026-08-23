@@ -1,6 +1,6 @@
 import { Button } from "./Button";
 import { MonoTag } from "./MonoTag";
-import { Placeholder } from "./Placeholder";
+import { SiteImage } from "./SiteImage";
 
 export type ForkPanel = {
   label: string;
@@ -9,7 +9,8 @@ export type ForkPanel = {
   cta: string;
   href: string;
   note?: string;
-  brief: string;
+  /** Image slot id in imagery.json. */
+  image: string;
   tags?: string[];
 };
 
@@ -51,7 +52,7 @@ function ForkSide({
         <p className="t-body m-0 max-w-[46ch] text-text-secondary">{panel.body}</p>
       </div>
 
-      <Placeholder brief={panel.brief} height="180px" />
+      <SiteImage id={panel.image} height="180px" sizes="(max-width: 1024px) 100vw, 50vw" />
 
       <div className="flex flex-col gap-[var(--space-3)]">
         <div className="flex flex-wrap items-center gap-[var(--space-4)]">
