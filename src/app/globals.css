@@ -1,0 +1,106 @@
+@import "tailwindcss";
+/* Imported into Tailwind's base layer: the token file carries element defaults
+   (a, p, h1…) and unlayered CSS would otherwise beat every utility class. */
+@import "../styles/variables.css" layer(base);
+@import "../styles/theme.css";
+
+/* --------------------------------------------------------------------------
+   Font wiring — the four faces are self-hosted by next/font and exposed as
+   CSS variables on <html>. Remap the token families onto them so components
+   keep consuming --font-display / --font-body / --font-editorial / --font-mono.
+   -------------------------------------------------------------------------- */
+:root {
+  --font-display:   var(--font-funnel-display), 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-editorial: var(--font-instrument-serif), 'EB Garamond', ui-serif, Georgia, serif;
+  --font-body:      var(--font-familjen-grotesk), 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono:      var(--font-jetbrains-mono), 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --action-label: var(--color-paper);
+}
+
+/* --------------------------------------------------------------------------
+   Tailwind aliases, declared inline so they resolve at use-site against the
+   semantic tokens. That is what lets [data-ground="inverse"] remap a whole
+   section without any component carrying a dark-mode branch of its own.
+   -------------------------------------------------------------------------- */
+@theme inline {
+  --font-display:   var(--font-funnel-display), 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-editorial: var(--font-instrument-serif), 'EB Garamond', ui-serif, Georgia, serif;
+  --font-body:      var(--font-familjen-grotesk), 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono:      var(--font-jetbrains-mono), 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-text-primary:     var(--text-primary);
+  --color-text-secondary:   var(--text-secondary);
+  --color-text-disabled:    var(--text-disabled);
+  --color-text-inverse:     var(--text-inverse);
+  --color-text-link:        var(--text-link);
+  --color-text-technical:   var(--text-technical);
+  --color-text-alert:       var(--text-alert);
+
+  --color-surface-page:     var(--surface-page);
+  --color-surface-raised:   var(--surface-raised);
+  --color-surface-muted:    var(--surface-muted);
+  --color-surface-tint:     var(--surface-tint);
+  --color-surface-inverse:  var(--surface-inverse);
+  --color-surface-alert:    var(--surface-alert);
+  --color-surface-selected: var(--surface-selected);
+
+  --color-border-hairline:  var(--border-hairline);
+  --color-border-strong:    var(--border-strong);
+  --color-border-inactive:  var(--border-inactive);
+
+  --color-action:           var(--action-fill);
+  --color-action-hover:     var(--action-fill-hover);
+  --color-action-label:     var(--action-label);
+  --color-mark:             var(--mark);
+  --color-focus:            var(--focus-ring);
+}
+
+/* --------------------------------------------------------------------------
+   Ground contexts. variables.css remaps the semantic tokens; these paint the
+   surface and carry the two additions this build needs.
+   -------------------------------------------------------------------------- */
+[data-ground] { background: var(--surface-page); color: var(--text-primary); }
+[data-ground="inverse"] { --action-label: var(--color-ink); }
+[data-ground="alert"] { --surface-page: var(--color-pepper-50); }
+
+/* --------------------------------------------------------------------------
+   Type roles. The scale lives in the tokens; these name the roles the handoff
+   is written in, so a page reads the way the spec reads.
+   -------------------------------------------------------------------------- */
+.t-display {
+  font-family: var(--font-display); font-weight: var(--weight-medium);
+  font-size: var(--text-display); line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+}
+.t-h1 { font-family: var(--font-display); font-weight: var(--weight-medium); font-size: var(--text-h1); line-height: var(--leading-h1); letter-spacing: var(--tracking-h1); }
+.t-h2 { font-family: var(--font-display); font-weight: var(--weight-medium); font-size: var(--text-h2); line-height: var(--leading-h2); letter-spacing: var(--tracking-h2); }
+.t-h3 { font-family: var(--font-display); font-weight: var(--weight-medium); font-size: var(--text-h3); line-height: var(--leading-h3); letter-spacing: var(--tracking-h3); }
+.t-h4 { font-family: var(--font-body);    font-weight: var(--weight-semibold); font-size: var(--text-h4); line-height: var(--leading-h4); letter-spacing: var(--tracking-h4); }
+.t-body-lg { font-size: var(--text-body-lg); line-height: var(--leading-body-lg); letter-spacing: var(--tracking-body-lg); }
+.t-body    { font-size: var(--text-body);    line-height: var(--leading-body);    letter-spacing: var(--tracking-body); }
+.t-body-sm { font-size: var(--text-body-sm); line-height: var(--leading-body-sm); letter-spacing: var(--tracking-body-sm); }
+.t-ui      { font-size: var(--text-ui);      line-height: var(--leading-ui);      letter-spacing: var(--tracking-ui); font-weight: var(--weight-medium); }
+.t-caption { font-size: var(--text-caption); line-height: var(--leading-caption); }
+.t-mono-sm { font-family: var(--font-mono); font-size: var(--text-mono-sm); line-height: var(--leading-mono-sm); letter-spacing: var(--tracking-mono-sm); text-transform: uppercase; }
+
+/* The mark. Pepper 500 appears here and nowhere else — it fails AA as text
+   and must never fill an action. */
+.mark { color: var(--mark); }
+
+.skip-link {
+  position: absolute; left: var(--space-4); top: -100%;
+  z-index: var(--z-toast);
+  background: var(--color-ink); color: var(--color-paper);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono); font-size: var(--text-mono);
+  letter-spacing: var(--tracking-mono); text-transform: uppercase;
+  text-decoration: none;
+}
+.skip-link:focus { top: var(--space-4); color: var(--color-paper); }
+
+/* Hover changes a border. Nothing moves, nothing lifts, nothing scales. */
+.card-hover { transition: border-color var(--duration-fast) var(--ease-out); }
+.card-hover:hover { border-color: var(--border-strong); }
+
+::selection { background: var(--color-peach); color: var(--color-ink); }
