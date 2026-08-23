@@ -6,10 +6,14 @@ system wired in as the token layer.
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
-npm run build
+npm run dev            # http://localhost:3000
+npm run build && npm start
 npm run lint
+npm run fetch:images   # localise the generated imagery — see Imagery
 ```
+
+**See [LAUNCH.md](./LAUNCH.md)** for how to preview, what is blocking launch,
+and what has been verified.
 
 ## Routes
 
@@ -189,13 +193,20 @@ change, and kept in sync across tabs by the `storage` event. It sets
 `data-view` on `<body>`, drives the card filter on `/protocols`, the audience
 context band, the cross-link copy, and the selector on step 1 of the assessment.
 
+## Routing, SEO and legal
+
+`src/content/routes.ts` is the route table; `sitemap.ts` and `robots.ts` are
+generated from it, so a new page enters the sitemap by being added there. Set
+`NEXT_PUBLIC_SITE_URL` in the deployment environment — it drives `metadataBase`,
+canonical URLs, the sitemap and `robots.txt`.
+
+`/prescribing-standard` publishes the five rules in full, plus what a patient is
+entitled to expect from a consult. `/legal` is deliberately unwritten and
+`noindex`: it lists what the privacy policy, terms and contact details have to
+cover rather than showing invented policy, because health information is
+sensitive information under the Privacy Act. Both are linked from the footer, so
+no footer link is a dead end.
+
 ## Still to do
 
-- `npm run fetch:images`, then drop `remotePatterns` from `next.config.ts`.
-- Real endpoints for the assessment; it currently holds state and takes no
-  payment, which matches the design.
-- The remaining protocol trios (recovery, performance, sleep, sexual health,
-  longevity). Only hormonal and sexual health genuinely fork Him/Her — recovery,
-  sleep and longevity should stay unisex.
-- Journal and article templates, including the article meta block
-  (`WRITTEN BY` / `MEDICALLY REVIEWED BY` / `PUBLISHED` / `LAST REVIEWED`).
+See [LAUNCH.md](./LAUNCH.md).

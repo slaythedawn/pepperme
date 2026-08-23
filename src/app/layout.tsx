@@ -11,6 +11,7 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Topbar } from "@/components/layout/Topbar";
 import { ViewProvider } from "@/components/view/ViewProvider";
 import { SITE } from "@/content/site";
+import { SITE_URL } from "@/content/routes";
 
 /* Four faces, four jobs, no overlap. Self-hosted for performance. */
 const display = Funnel_Display({
@@ -39,13 +40,28 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+const DESCRIPTION =
+  "Australian doctor-led telehealth. A $149 assessment, a comprehensive blood panel and a consult with an AHPRA-registered Australian doctor who reads the whole panel.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: `${SITE.name} — doctor-led care, read as one system`,
     template: `%s — ${SITE.name}`,
   },
-  description:
-    "Australian doctor-led telehealth. A $149 assessment, a comprehensive blood panel and a consult with an AHPRA-registered Australian doctor who reads the whole panel.",
+  description: DESCRIPTION,
+  applicationName: SITE.name,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: SITE.name,
+    locale: "en_AU",
+    url: "/",
+    title: `${SITE.name} — doctor-led care, read as one system`,
+    description: DESCRIPTION,
+  },
+  twitter: { card: "summary_large_image", title: SITE.name, description: DESCRIPTION },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -57,6 +73,23 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} ${editorial.variable} ${mono.variable}`}
     >
       <body data-ground="page">
+        <script
+          type="application/ld+json"
+          // Structured data mirrors what the pages already say. It must never
+          // assert anything the compliance rules keep off the page itself.
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MedicalOrganization",
+              name: SITE.name,
+              url: SITE_URL,
+              description: DESCRIPTION,
+              legalName: SITE.legalName,
+              areaServed: "AU",
+              medicalSpecialty: "Endocrine",
+            }),
+          }}
+        />
         <a href="#main" className="skip-link">
           Skip to content
         </a>

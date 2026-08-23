@@ -57,17 +57,17 @@ export const FOOTER_COLUMNS = [
     heading: "Help",
     links: [
       { label: "FAQ", href: "/pricing#faq" },
-      { label: "Shipping", href: "/pricing" },
-      { label: "Contact", href: "/doctors" },
-      { label: "Member portal", href: "/assessment" },
+      { label: "Contact", href: "/legal#contact" },
+      { label: "Assessment", href: "/assessment" },
+      { label: "Doctors", href: "/doctors" },
     ],
   },
   {
     heading: "Legal",
     links: [
-      { label: "Privacy", href: "/pricing" },
-      { label: "Terms", href: "/pricing" },
-      { label: "Prescribing standard", href: "/doctors#prescribing-standard" },
+      { label: "Privacy", href: "/legal#privacy" },
+      { label: "Terms", href: "/legal#terms" },
+      { label: "Prescribing standard", href: "/prescribing-standard" },
       { label: "42DLB", href: "/science" },
     ],
   },

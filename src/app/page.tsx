@@ -409,7 +409,7 @@ export default function HomePage() {
               <Button href="/doctors" variant="secondary">
                 Meet the team
               </Button>
-              <Button href="/doctors#prescribing-standard" variant="ghost">
+              <Button href="/prescribing-standard" variant="ghost">
                 Prescribing standard
               </Button>
             </div>

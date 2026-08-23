@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -102,6 +103,11 @@ export default function DoctorsPage() {
         <h2 className="t-h2 mt-[var(--space-4)] max-w-[26ch] text-text-primary">
           Five rules every Pepper Me doctor prescribes by<span className="mark">.</span>
         </h2>
+        <p className="t-body mt-[var(--space-4)] max-w-[var(--container-text)] text-text-secondary">
+          The standard in full, including what every patient is entitled to expect from a
+          consult, is published at{" "}
+          <Link href="/prescribing-standard">the prescribing standard</Link>.
+        </p>
         <ol className="m-0 mt-[var(--space-7)] grid list-none gap-[var(--space-6)] p-0 md:grid-cols-3 lg:grid-cols-5">
           {RULES.map((r, i) => (
             <li key={r.title} className="border-t border-border-strong pt-[var(--space-3)]">
