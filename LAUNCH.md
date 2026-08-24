@@ -28,36 +28,80 @@ wire up a preview deployment.
 
 ---
 
+## The pre-launch gate
+
+Set `SITE_PASSWORD` in the host's environment and the entire site sits behind a
+password. Unset it and the gate disappears from the request path completely.
+Nothing else changes, and no rebuild is needed either way.
+
+```bash
+SITE_PASSWORD="something-long-and-boring" npm start
+```
+
+What the gate does while it is on:
+
+- Every route rewrites to a branded gate page until the password is entered.
+  Locked pages serve none of the underlying content — not a rendered page with a
+  banner over it.
+- `robots.txt` is served from *in front of* the gate and returns `Disallow: /`,
+  so a crawler that finds the domain gets a plain refusal rather than the gate
+  page rendered as a 200.
+- `sitemap.xml` returns nothing, and every response carries
+  `X-Robots-Tag: noindex, nofollow, noarchive`.
+- The unlock cookie holds an HMAC of a fixed message keyed by the password, so
+  it carries no secret and cannot be forged. Changing `SITE_PASSWORD` invalidates
+  every session issued under the old one.
+
+`robots.txt` and `sitemap.xml` are evaluated per request rather than baked into
+the build, specifically so they can never disagree with the gate — a live site
+still telling Google to go away is the failure mode that costs the most.
+
+**Share the password out of band**, not in the same email as the link. One
+password for everyone is the right shape for this: it is a shutter on an
+unfinished shopfront, not authentication. Nothing carrying real patient data
+should ever sit behind it — when the assessment gets a backend, that needs
+proper auth regardless of what this gate is doing.
+
+**At launch:** delete `SITE_PASSWORD` from the host's environment. That is the
+whole removal. Then check `robots.txt` says `Allow: /` and `sitemap.xml` lists
+the routes before you ask anyone to index anything.
+
+---
+
 ## Blocking — must happen before the site is public
 
 1. **Localise the imagery.** `npm run fetch:images`, then delete the
    `remotePatterns` block from `next.config.ts`. Until then the site depends on
    a generation CDN that can drop the files at any time.
-2. **Legal copy.** `/legal` is deliberately unwritten and `noindex` — it lists
+2. **Take the gate off — last, deliberately.** `SITE_PASSWORD` should stay set
+   until every other item on this list is done. Removing it is the act that
+   makes the site public, so treat it as the launch switch rather than as
+   configuration.
+3. **Legal copy.** `/legal` is deliberately unwritten and `noindex` — it lists
    what the privacy policy, terms and contact details have to cover, rather than
    showing a policy that reads well and binds nobody. Pepper Me handles health
    information, which is sensitive information under the Privacy Act 1988 and
    the Australian Privacy Principles, so this needs a lawyer, not a template.
    When the copy lands: fill the page, drop `robots: { index: false }`, and add
    `/legal` back to `ROUTES` in `src/content/routes.ts` so it enters the sitemap.
-3. **Set `NEXT_PUBLIC_SITE_URL`** in the deployment environment. It drives
+4. **Set `NEXT_PUBLIC_SITE_URL`** in the deployment environment. It drives
    `metadataBase`, every canonical URL, the sitemap and `robots.txt`.
-4. **The assessment form goes nowhere.** It holds its five steps of state and
+5. **The assessment form goes nowhere.** It holds its five steps of state and
    takes no payment, which matches the design, but nothing is submitted. It
    needs an endpoint, a store for the answers, and — because those answers are
    health information — a decision about where that data lives before a single
    real one is collected.
-5. **Regulatory sign-off.** Every page has been built against the compliance
+6. **Regulatory sign-off.** Every page has been built against the compliance
    rules in the handoff (no testimonials, no medicine named, no medicine
    depicted, no inducement, no interpretation on a data display), but that is my
    reading of the brief, not a lawyer's. Someone who owns TGA risk should read
    the site before it is public.
-6. **Verify the claims.** The numbers are the prototype's: 14 doctors, ~14%
+7. **Verify the claims.** The numbers are the prototype's: 14 doctors, ~14%
    decline rate, 2,140 members, 4-hour median reply, the cohort figures on
    `/science`, the AHPRA registration numbers on every doctor card. Each one is
    a factual claim on a health page and each needs to be true on launch day —
    AHPRA numbers especially, since they are publicly checkable.
-7. **Review the remaining imagery.** 23 frames were generated blind — the CDN
+8. **Review the remaining imagery.** 23 frames were generated blind — the CDN
    they live on is blocked from the session that made them, so no one has
    checked them against the brief except you. One frame has already been
    reshot (a third arm). The two with the most anatomy risk left are

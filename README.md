@@ -15,6 +15,11 @@ npm run fetch:images   # localise the generated imagery — see Imagery
 **See [LAUNCH.md](./LAUNCH.md)** for how to preview, what is blocking launch,
 and what has been verified.
 
+The site is behind a password while it waits on legal sign-off: set
+`SITE_PASSWORD` and everything sits behind a gate that also serves
+`Disallow: /` to crawlers. Unset it and the gate disappears entirely. See
+`.env.example` and the LAUNCH.md section.
+
 ## Routes
 
 | Route | Source |

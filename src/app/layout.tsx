@@ -6,9 +6,6 @@ import {
   JetBrains_Mono,
 } from "next/font/google";
 import "./globals.css";
-import { SiteHeader } from "@/components/layout/SiteHeader";
-import { SiteFooter } from "@/components/layout/SiteFooter";
-import { Topbar } from "@/components/layout/Topbar";
 import { ViewProvider } from "@/components/view/ViewProvider";
 import { SITE } from "@/content/site";
 import { SITE_URL } from "@/content/routes";
@@ -90,15 +87,7 @@ export default function RootLayout({
             }),
           }}
         />
-        <a href="#main" className="skip-link">
-          Skip to content
-        </a>
-        <ViewProvider>
-          <Topbar />
-          <SiteHeader />
-          <main id="main">{children}</main>
-          <SiteFooter />
-        </ViewProvider>
+        <ViewProvider>{children}</ViewProvider>
       </body>
     </html>
   );

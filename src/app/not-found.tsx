@@ -1,10 +1,12 @@
 import { Section } from "@/components/layout/Section";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 import { Button } from "@/components/ui/Button";
 import { MonoTag } from "@/components/ui/MonoTag";
 
 export default function NotFound() {
   return (
-    <Section ground="page">
+    <SiteChrome>
+      <Section ground="page">
       <MonoTag>Error 404</MonoTag>
       <h1 className="t-h1 mt-[var(--space-4)] max-w-[20ch] text-text-primary">
         This page isn&rsquo;t here<span className="mark">.</span>
@@ -19,6 +21,7 @@ export default function NotFound() {
           See the programs
         </Button>
       </div>
-    </Section>
+      </Section>
+    </SiteChrome>
   );
 }
