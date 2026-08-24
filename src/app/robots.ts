@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { gatePassword } from "@/lib/preview-gate";
+import { isGated } from "@/lib/preview-gate";
 import { SITE_URL } from "@/content/routes";
 
 /*
@@ -15,7 +15,7 @@ export default function robots(): MetadataRoute.Robots {
   // While the pre-launch gate is on, say so as plainly as the protocol allows.
   // The gate already makes the site unreachable; this stops a crawler holding
   // on to the URLs, and it is why /robots.txt is served from in front of it.
-  if (gatePassword()) {
+  if (isGated()) {
     return { rules: { userAgent: "*", disallow: "/" } };
   }
 

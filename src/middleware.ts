@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { COOKIE_NAME, gatePassword, isUnlocked } from "@/lib/preview-gate";
+import { COOKIE_NAME, gatePassword, isGated, isUnlocked } from "@/lib/preview-gate";
 
 /**
  * Everything is gated except the gate itself, the endpoint that unlocks it, and
@@ -14,16 +14,16 @@ const OPEN_PATHS = [
 ];
 
 export async function middleware(request: NextRequest) {
+  // SITE_PUBLIC=true is the only thing that takes the gate out of the path.
+  if (!isGated()) return NextResponse.next();
+
   const password = gatePassword();
-
-  // No password configured — the gate is off and this is a pass-through.
-  if (!password) return NextResponse.next();
-
   const { pathname, search } = request.nextUrl;
-  const unlocked = await isUnlocked(
-    request.cookies.get(COOKIE_NAME)?.value,
-    password,
-  );
+
+  // Gated with no password configured: nothing unlocks, by design.
+  const unlocked = password
+    ? await isUnlocked(request.cookies.get(COOKIE_NAME)?.value, password)
+    : false;
 
   if (unlocked) {
     // Reachable, but never indexable while the gate is on. Belt and braces

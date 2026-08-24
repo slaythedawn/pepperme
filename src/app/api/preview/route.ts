@@ -4,6 +4,7 @@ import {
   COOKIE_MAX_AGE,
   expectedToken,
   gatePassword,
+  isGated,
   passwordMatches,
 } from "@/lib/preview-gate";
 
@@ -12,9 +13,17 @@ import {
  * the password — the password itself is never stored client-side.
  */
 export async function POST(request: NextRequest) {
+  if (!isGated()) {
+    return NextResponse.json({ error: "The gate is not enabled." }, { status: 404 });
+  }
+
   const password = gatePassword();
   if (!password) {
-    return NextResponse.json({ error: "The gate is not enabled." }, { status: 404 });
+    // Gated but unconfigured. Nothing to compare against, so nothing gets in.
+    return NextResponse.json(
+      { error: "No preview password is configured for this deployment." },
+      { status: 503 },
+    );
   }
 
   const form = await request.formData();

@@ -4,6 +4,7 @@ import { ButtonAction } from "@/components/ui/Button";
 import { MonoData, MonoTag } from "@/components/ui/MonoTag";
 import { Wordmark } from "@/components/layout/Wordmark";
 import { SITE } from "@/content/site";
+import { gatePassword } from "@/lib/preview-gate";
 
 export const metadata: Metadata = {
   title: "Not public yet",
@@ -21,6 +22,8 @@ export default async function PreviewPage({
 }) {
   const { from = "/", error } = await searchParams;
   const destination = from.startsWith("/") && !from.startsWith("//") ? from : "/";
+  // Gated but unconfigured: say so rather than showing a form nothing can open.
+  const configured = Boolean(gatePassword());
 
   return (
     <div data-ground="inverse" className="flex min-h-screen flex-col justify-between">
@@ -40,6 +43,13 @@ export default async function PreviewPage({
             If you were given a password, it goes here.
           </p>
 
+          {!configured ? (
+            <p className="t-body mt-[var(--space-7)] border-t border-border-hairline pt-[var(--space-5)] text-text-secondary">
+              This deployment has no preview password set, so there is nothing to
+              enter yet. Whoever set it up needs to add <code>SITE_PASSWORD</code> to
+              the environment and redeploy.
+            </p>
+          ) : (
           <form
             action="/api/preview"
             method="POST"
@@ -74,6 +84,7 @@ export default async function PreviewPage({
               </p>
             ) : null}
           </form>
+          )}
         </div>
       </Container>
 

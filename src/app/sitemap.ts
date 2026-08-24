@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { ARTICLES } from "@/content/articles";
 import { ROUTES, SITE_URL, articleRoutes } from "@/content/routes";
-import { gatePassword } from "@/lib/preview-gate";
+import { isGated } from "@/lib/preview-gate";
 
 /*
  * Evaluated per request rather than baked into the build. The gate itself is a
@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Nothing to offer a crawler while the site is gated.
-  if (gatePassword()) return [];
+  if (isGated()) return [];
 
   const routes = [...ROUTES, ...articleRoutes(ARTICLES.map((a) => a.slug))];
 

@@ -30,9 +30,16 @@ wire up a preview deployment.
 
 ## The pre-launch gate
 
-Set `SITE_PASSWORD` in the host's environment and the entire site sits behind a
-password. Unset it and the gate disappears from the request path completely.
-Nothing else changes, and no rebuild is needed either way.
+**The gate fails closed.** The site is gated unless `SITE_PUBLIC` is exactly
+`"true"` — so a deploy that forgets its environment variables locks itself
+rather than publishing unapproved medical copy to the open web. Going public is
+a deliberate act, not the absence of one.
+
+| `SITE_PUBLIC` | `SITE_PASSWORD` | Result |
+|---|---|---|
+| unset | set | Gated, and the password lets people in. **Where you want to be now.** |
+| unset | unset | Gated and sealed. Nobody gets in, and the gate says so. |
+| `"true"` | either | Public. The gate is out of the request path. |
 
 ```bash
 SITE_PASSWORD="something-long-and-boring" npm start
@@ -62,9 +69,9 @@ unfinished shopfront, not authentication. Nothing carrying real patient data
 should ever sit behind it — when the assessment gets a backend, that needs
 proper auth regardless of what this gate is doing.
 
-**At launch:** delete `SITE_PASSWORD` from the host's environment. That is the
-whole removal. Then check `robots.txt` says `Allow: /` and `sitemap.xml` lists
-the routes before you ask anyone to index anything.
+**At launch:** set `SITE_PUBLIC="true"` in the host's environment and redeploy.
+That is the whole switch. Then check `robots.txt` says `Allow: /` and
+`sitemap.xml` lists the routes before you ask anyone to index anything.
 
 ---
 
@@ -73,10 +80,9 @@ the routes before you ask anyone to index anything.
 1. **Localise the imagery.** `npm run fetch:images`, then delete the
    `remotePatterns` block from `next.config.ts`. Until then the site depends on
    a generation CDN that can drop the files at any time.
-2. **Take the gate off — last, deliberately.** `SITE_PASSWORD` should stay set
-   until every other item on this list is done. Removing it is the act that
-   makes the site public, so treat it as the launch switch rather than as
-   configuration.
+2. **Take the gate off — last, deliberately.** Setting `SITE_PUBLIC="true"` is
+   what makes the site public, and it should not happen until every other item
+   on this list is done. Treat it as the launch switch, not as configuration.
 3. **Legal copy.** `/legal` is deliberately unwritten and `noindex` — it lists
    what the privacy policy, terms and contact details have to cover, rather than
    showing a policy that reads well and binds nobody. Pepper Me handles health

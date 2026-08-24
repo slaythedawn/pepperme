@@ -2,8 +2,12 @@
  * The pre-launch gate.
  *
  * While the site is waiting on legal and regulatory sign-off it must be both
- * unreachable and unindexable. Setting SITE_PASSWORD turns the gate on; unset
- * it and the whole mechanism disappears from the request path.
+ * unreachable and unindexable.
+ *
+ * The gate FAILS CLOSED. It is on unless SITE_PUBLIC is explicitly "true", so
+ * a deploy that forgets its environment variables locks itself rather than
+ * publishing unapproved medical copy to the open web. Going public is a
+ * deliberate act with an audit trail, not the absence of one.
  *
  * The cookie holds an HMAC of a fixed message keyed by the password, so it
  * carries no secret itself and rotating the password invalidates every session
@@ -20,7 +24,19 @@ const MESSAGE = "pepperme-preview-v1";
 export const COOKIE_NAME = "pm-preview";
 export const COOKIE_MAX_AGE = 60 * 60 * 24 * 30;
 
-/** The gate is on whenever a password is configured. */
+/**
+ * The launch switch. Only the exact string "true" opens the site — anything
+ * else, including an unset variable or a typo, keeps the gate on.
+ */
+export function isGated(): boolean {
+  return process.env.SITE_PUBLIC !== "true";
+}
+
+/**
+ * The shared password, if one has been configured. A gated site with no
+ * password set is sealed: it lets nobody in, which is the correct behaviour for
+ * a misconfigured deploy.
+ */
 export function gatePassword(): string | undefined {
   const password = process.env.SITE_PASSWORD;
   return password && password.length > 0 ? password : undefined;
