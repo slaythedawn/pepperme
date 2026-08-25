@@ -40,9 +40,30 @@ export const articleRoutes = (slugs: string[]): Route[] =>
     changeFrequency: "yearly" as const,
   }));
 
+const FALLBACK_ORIGIN = "https://pepperme.com.au";
+
 /**
- * The canonical origin. Set NEXT_PUBLIC_SITE_URL in the deployment environment;
- * the fallback only exists so local builds resolve absolute URLs.
+ * The canonical origin, resolved defensively.
+ *
+ * Set NEXT_PUBLIC_SITE_URL in the deployment environment. This is deliberately
+ * tolerant of how that gets typed: an empty value, a bare hostname with no
+ * scheme, or a trailing slash all resolve rather than throw. An earlier version
+ * used `??`, which only falls back on unset — an environment variable that
+ * existed but was blank reached `new URL("")` and took a deploy's build down.
+ *
+ * Anything unusable falls back to the launch domain, because a wrong canonical
+ * URL on a gated site is a footnote and a failed build is not.
  */
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://pepperme.com.au";
+function resolveSiteUrl(): string {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (!raw) return FALLBACK_ORIGIN;
+
+  const withScheme = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+  try {
+    return new URL(withScheme).origin;
+  } catch {
+    return FALLBACK_ORIGIN;
+  }
+}
+
+export const SITE_URL = resolveSiteUrl();
